@@ -1,7 +1,11 @@
 <?php
 
 
-Route::get('/', 'TestController@index');
+Route::get('/',[
+	'middleware' => 'auth',
+	'uses' => 'TestController@index'
+	]);
+Route::group(['middleware' => ['auth']], function () {
 Route::get('/backup', 'GeneralController@backup');
 // General Information
 // Route::get('/summernote', 'GeneralController@index');
@@ -185,3 +189,7 @@ Route::get('/view_kinder/{id}', 'KinderController@read');
 Route::get('/edit_kinder/{id}', 'KinderController@edit');
 Route::get('/delete_kinder/{id}', 'KinderController@delete');
 Route::post('/update_kinder', 'KinderController@update');
+});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
