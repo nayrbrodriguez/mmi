@@ -50,7 +50,7 @@ class GuidelinesController extends Controller
     		]);
     	
     	
-        return redirect('guidelines')->with('message', 'Successfully update!');
+        return redirect('admin/guidelines')->with('message', 'Successfully update!');
     }
 }
 

@@ -50,7 +50,7 @@ class RequirementController extends Controller
     		]);
     	
     	
-        return redirect('requirement')->with('message', 'Successfully update!');
+        return redirect('admin/requirement')->with('message', 'Successfully update!');
     }
 }
 

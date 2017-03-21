@@ -50,7 +50,7 @@ class CorecompetenciesController extends Controller
     		]);
     	
     	
-        return redirect('core_competencies')->with('message', 'Successfully update!');
+        return redirect('admin/core_competencies')->with('message', 'Successfully update!');
     }
 }
 

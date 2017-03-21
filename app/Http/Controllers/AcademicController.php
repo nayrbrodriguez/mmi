@@ -50,7 +50,7 @@ class AcademicController extends Controller
     		]);
     	
     	
-        return redirect('academic_policy')->with('message', 'Successfully update!');
+        return redirect('admin/academic_policy')->with('message', 'Successfully update!');
     }
 }
 

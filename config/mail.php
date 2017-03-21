@@ -29,7 +29,8 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+    'host' => env('MAIL_HOST', 'smtp.gmail.com'),
+    // 'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,9 +57,13 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('MAIL_FROM_ADDRESS', 'cronow19@gmail.com'),
+        'name' => env('MAIL_FROM_NAME', 'Cronow'),
     ],
+// 'from' => [
+//         'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
+//         'name' => env('MAIL_FROM_NAME', 'Example'),
+//     ],
 
     /*
     |--------------------------------------------------------------------------
@@ -84,9 +89,9 @@ return [
     |
     */
 
-    'username' => env('MAIL_USERNAME'),
+    'username' => env('MAIL_USERNAME','cronow19@gmail.com'),
 
-    'password' => env('MAIL_PASSWORD'),
+    'password' => env('MAIL_PASSWORD','brodriguez'),
 
     /*
     |--------------------------------------------------------------------------

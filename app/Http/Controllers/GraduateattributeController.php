@@ -50,7 +50,7 @@ class GraduateattributeController extends Controller
     		]);
     	
     	
-        return redirect('grad_attribute')->with('message', 'Successfully update!');
+        return redirect('admin/grad_attribute')->with('message', 'Successfully update!');
     }
 }
 

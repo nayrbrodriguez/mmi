@@ -50,7 +50,7 @@ class PresidentController extends Controller
     		]);
     	
     	
-        return redirect('about_president')->with('message', 'Successfully update!');
+        return redirect('admin/about_president')->with('message', 'Successfully update!');
     }
 }
 

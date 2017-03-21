@@ -50,7 +50,7 @@ class LogoController extends Controller
     		]);
     	
     	
-        return redirect('about_logo')->with('message', 'Successfully update!');
+        return redirect('admin/about_logo')->with('message', 'Successfully update!');
     }
 }
 

@@ -50,7 +50,7 @@ class RegistrationController extends Controller
     		]);
     	
     	
-        return redirect('registration')->with('message', 'Successfully update!');
+        return redirect('admin/registration')->with('message', 'Successfully update!');
     }
 }
 

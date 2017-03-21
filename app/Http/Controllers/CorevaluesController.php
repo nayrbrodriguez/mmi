@@ -50,7 +50,7 @@ class CorevaluesController extends Controller
     		]);
     	
     	
-        return redirect('core_values')->with('message', 'Successfully update!');
+        return redirect('admin/core_values')->with('message', 'Successfully update!');
     }
 }
 

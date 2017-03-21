@@ -18,7 +18,7 @@
       <div class="panel-group">
     <div class="panel panel-default">
     <div class="pull-right">
-                  <a href="{{url('add_arabic_department')}}" class="btn btn-primary ">Add Department</a>
+                  <a href="{{url('admin/add_arabic_department')}}" class="btn btn-primary ">Add Department</a>
                 </div>
       <div class="panel-heading"><h3>Arabic Department</h3>
       <div class="form-group">
@@ -38,7 +38,7 @@
           @foreach($data as $key => $gen)
                       <tr>
                         {{-- <td>{!!$gen->title!!}</td> --}}
-            <td><a href="{{url('view_arabic_department', array($gen->id))}}" >{!!$gen->title!!}</a></td>
+            <td><a href="{{url('admin/view_arabic_department', array($gen->id))}}" >{!!$gen->title!!}</a></td>
             {{-- <td>
               <a href="{{url('view_course_offering', array($gen->id))}}" class="btn btn-primary">View</a>
               <a href="{{url('edit_course_offering',array($gen->id))}}" class="btn btn-info">Edit</a>
@@ -64,7 +64,7 @@
         <h4>@yield('title')</h4>
       </div>
       <div class="panel-body">
-        <form action="{{ url('update_arabic_department') }}" method="post">
+        <form action="{{ url('admin/update_arabic_department') }}" method="post">
           <div class="form-group">
 
             <label for="title">Title</label>
@@ -78,7 +78,7 @@
           </div>
           <div class="form-group">
             <input type="submit" name="send" id="send" value="Update" class="btn btn-success">
-            <a href="{{url('arabic_department')}}" class="btn btn-danger">Back</a>
+            <a href="{{url('admin/arabic_department')}}" class="btn btn-danger">Back</a>
             {!! csrf_field() !!}
 
           </div>

@@ -5,7 +5,7 @@
 @endsection
 @section('content')
 <div style="padding-bottom: 10px;">
-	<a href="{{url('requirement')}}" class="btn btn-danger">Back</a>
+	<a href="{{url('admin/requirement')}}" class="btn btn-danger">Back</a>
 	</div>
 		<div class="panel panel-default">
 

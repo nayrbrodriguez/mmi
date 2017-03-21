@@ -2,7 +2,7 @@
 <header class="main-header">
 
     <!-- Logo -->
-    <a href="index2.html" class="logo"><b>Admin</b>MMI</a>
+    <a href="{{url('admin/dashboard')}}" class="logo"><b>Admin</b>MMI</a>
 
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top" role="navigation">
@@ -25,7 +25,7 @@
                         {{-- </div> --}}
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="{{ asset("/bower_components/adminlte/dist/img/user2-160x160.jpg") }}" class="user-image" alt="User Image"/>
-              <span class="hidden-xs">Bryan Rodriguez</span>
+              <span class="hidden-xs">{{ Auth::user()->name }}</span>
             </a>
                        
                     <ul class="dropdown-menu">
@@ -33,7 +33,7 @@
                         <li class="user-header">
                             <img src="{{ asset("/bower_components/adminlte/dist/img/user2-160x160.jpg") }}" class="img-circle" alt="User Image" />
                             <p>
-                                Alexander Pierce - Web Developer
+                                {{ Auth::user()->name }} - Web Developer
                                 
                             </p>
                         </li>
@@ -45,7 +45,17 @@
                                 <a href="#" class="btn btn-default btn-flat">Profile</a>
                             </div>
                             <div class="pull-right">
-                                <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                
+                                <a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();" class="btn btn-default btn-flat">
+                                            Sign out
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+
                             </div>
                         </li>
                     </ul>

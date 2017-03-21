@@ -20,7 +20,7 @@ class GeneralController extends Controller
     		'title'=>$request['title'],
     		'description'=>$request['summernote'],
     		]);
-    	return redirect('gen_info')->with('message', 'Successfully added!');
+    	return redirect('admin/gen_info')->with('message', 'Successfully added!');
     }
 
     public function view(){
@@ -50,7 +50,7 @@ class GeneralController extends Controller
     		]);
     	
     	
-        return redirect('gen_info')->with('message', 'Successfully update!');
+        return redirect('admin/gen_info')->with('message', 'Successfully update!');
     }
 }
 

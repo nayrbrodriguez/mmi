@@ -21,8 +21,8 @@ class CourseController extends Controller
                     $output.='<tr>'.
                              
                              '<td>'.$depart->course.'</td>'.
-                             '<td>'.'<a href="edit_course_offering/'.$depart->id.'" class="btn btn-info">Edit</a>'.
-                             '<a onclick="return confirm(`'.$mensahe.$depart->course.'?`)" href="/delete_course_offering/'.$depart->id.'" class="btn btn-danger">Delete</a>'.
+                             '<td>'.'<a href="admin/edit_course_offering/'.$depart->id.'" class="btn btn-info">Edit</a>'.
+                             '<a onclick="return confirm(`'.$mensahe.$depart->course.'?`)" href="admin/delete_course_offering/'.$depart->id.'" class="btn btn-danger">Delete</a>'.
 
                              '</td>'.
                              '</tr>';
@@ -44,7 +44,7 @@ class CourseController extends Controller
     		'course'=>$request['course'],
     		
     		]);
-    	return redirect('course_offering')->with('message', 'Successfully added!');
+    	return redirect('admin/course_offering')->with('message', 'Successfully added!');
     }
 
     
@@ -85,7 +85,7 @@ class CourseController extends Controller
     		]);
     	
     	
-        return redirect('course_offering')->with('message', 'Successfully update!');
+        return redirect('admin/course_offering')->with('message', 'Successfully update!');
     }
 }
 

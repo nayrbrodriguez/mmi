@@ -12,7 +12,7 @@
 				<h4>@yield('title')</h4>
 			</div>
 			<div class="panel-body">
-				<form action="{{ url('create_gen_info') }}" method="post">
+				<form action="{{ url('admin/create_gen_info') }}" method="post">
 					<div class="form-group">
 						<label for="title">Title</label>
 						<input type="text" name="title" class="form-control">
@@ -25,7 +25,7 @@
 					</div>
 					<div class="form-group">
 						<input type="submit" name="send" id="send" value="Publish" class="btn btn-success">
-						<a href="{{url('gen_info')}}" class="btn btn-danger">Back</a>
+						<a href="{{url('admin/gen_info')}}" class="btn btn-danger">Back</a>
 						{!! csrf_field() !!}
 
 					</div>

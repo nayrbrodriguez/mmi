@@ -50,7 +50,7 @@ class EnrollmentController extends Controller
     		]);
     	
     	
-        return redirect('enrollment')->with('message', 'Successfully update!');
+        return redirect('admin/enrollment')->with('message', 'Successfully update!');
     }
 }
 

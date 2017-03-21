@@ -31,7 +31,7 @@ class ArabdeptController extends Controller
 
     	
     	
-    	return redirect('arabic_department')->with('message', 'Successfully added!');
+    	return redirect('admin/arabic_department')->with('message', 'Successfully added!');
     	// return redirect('arabic_department');
     	
     }
@@ -44,7 +44,7 @@ class ArabdeptController extends Controller
      		if ($department) {
      			foreach ($department as $key => $depart) {
      				$output.='<tr>'.
-     						 '<td>'.'<a href="view_arabic_department/'.$depart->id.'">'.$depart->title.'</a>'.'</td>'.
+     						 '<td>'.'<a href="admin/view_arabic_department/'.$depart->id.'">'.$depart->title.'</a>'.'</td>'.
      						 '</tr>';
 
      			}
@@ -70,7 +70,7 @@ class ArabdeptController extends Controller
 
     public function delete($id){
     	DB::table('tb_arabdept')->where('id',$id)->delete();
-    	return redirect('arabic_department')->with('message', 'Successfully delete!');
+    	return redirect('admin/arabic_department')->with('message', 'Successfully delete!');
     }
 
     public function edit($id){

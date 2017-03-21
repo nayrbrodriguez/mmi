@@ -20,7 +20,7 @@
 </div>
         <div class="row"><div class="col-xs-12">
                 <div class="col-xs-12">
-                  <a href="{{url('add_course_offering')}}" class="btn  btn-primary ">Add Course</a>
+                  <a href="{{url('admin/add_course_offering')}}" class="btn  btn-primary ">Add Course</a>
                 </div>
                 <div class="col-xs-6 pull-right">
                   <input class="form-control" type="text" id="search"  name="search" placeholder="Search"></input>
@@ -46,9 +46,9 @@
             <td>{!!$gen->course!!}</td>
             <td>
               {{-- <a href="{{url('view_course_offering', array($gen->id))}}" class="btn btn-primary">View</a> --}}
-              <a href="{{url('edit_course_offering',array($gen->id))}}" class="btn btn-info">Edit</a>
+              <a href="{{url('admin/edit_course_offering',array($gen->id))}}" class="btn btn-info">Edit</a>
               {{-- <a href="{{url('delete_course_offering',array($gen->id))}}" class="btn btn-danger " type="button">Delete</a> --}}
-              <a onclick="return confirm(`Are you sure you want to delete {!!$gen->course!!}?`)" href="{{url('delete_course_offering',array($gen->id))}}" class="btn btn-danger ">Delete</a>
+              <a onclick="return confirm(`Are you sure you want to delete {!!$gen->course!!}?`)" href="{{url('admin/delete_course_offering',array($gen->id))}}" class="btn btn-danger ">Delete</a>
               
             </td>
                       </tr>
@@ -69,7 +69,7 @@
     $value=$(this).val();
     $.ajax({
       type: 'get',
-      url :'{{URL::to('course_search')}}',
+      url :'{{URL::to('admin/course_search')}}',
       data :{'search':$value},
       success:function(data){
         $('tbody').html(data);

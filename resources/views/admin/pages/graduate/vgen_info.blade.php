@@ -7,11 +7,7 @@
 
 
 @section('content')
-    @if(session()->has('message'))
-    <div class="alert alert-warning">
-        {{ session()->get('message') }}
-    </div>
-@endif
+  
 <div class="row">
             <div class="col-xs-12">
               <div class="box">
@@ -33,8 +29,8 @@
                         {{-- <td>{!!$gen->title!!}</td> --}}
             <td>{!!$gen->description!!}</td>
             <td>
-              <a href="{{url('view_grad_attribute', array($gen->id))}}" class="btn btn-primary">View</a>
-              <a href="{{url('edit_grad_attribute',array($gen->id))}}" class="btn btn-info">Edit</a>
+              <a href="{{url('admin/view_grad_attribute', array($gen->id))}}" class="btn btn-primary">View</a>
+              <a href="{{url('admin/edit_grad_attribute',array($gen->id))}}" class="btn btn-info">Edit</a>
               {{-- <a href="{{url('delete_gen_info',array($gen->id))}}" class="btn btn-danger">Delete</a> --}}
             </td>
                       </tr>

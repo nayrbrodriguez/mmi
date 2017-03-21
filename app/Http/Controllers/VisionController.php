@@ -50,7 +50,7 @@ class VisionController extends Controller
     		]);
     	
     	
-        return redirect('vision_mission')->with('message', 'Successfully update!');
+        return redirect('admin/vision_mission')->with('message', 'Successfully update!');
     }
 }
 
