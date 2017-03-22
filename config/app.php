@@ -153,6 +153,7 @@ return [
         Illuminate\Hashing\HashServiceProvider::class,
         Illuminate\Mail\MailServiceProvider::class,
         Illuminate\Notifications\NotificationServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
         Illuminate\Pagination\PaginationServiceProvider::class,
         Illuminate\Pipeline\PipelineServiceProvider::class,
         Illuminate\Queue\QueueServiceProvider::class,
@@ -176,6 +177,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
 
     ],
@@ -229,7 +231,7 @@ return [
         'Form' => Collective\Html\FormFacade::class,
       
       'Html' => Collective\Html\HtmlFacade::class,
-
+        'Image' => Intervention\Image\Facades\Image::class,
     ],
 
 ];

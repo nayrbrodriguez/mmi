@@ -24,16 +24,17 @@
                         {{-- <div style="padding-top: 15px; padding-right: 15px; color:  white; "> --}}
                         {{-- </div> --}}
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="{{ asset("/bower_components/adminlte/dist/img/user2-160x160.jpg") }}" class="user-image" alt="User Image"/>
+              <img src="/uploads/avatars/{{ Auth::user()->avatar }}" class="user-image" alt="User Image"/>
               <span class="hidden-xs">{{ Auth::user()->name }}</span>
             </a>
                        
                     <ul class="dropdown-menu">
                         <!-- The user image in the menu -->
                         <li class="user-header">
-                            <img src="{{ asset("/bower_components/adminlte/dist/img/user2-160x160.jpg") }}" class="img-circle" alt="User Image" />
+                            {{-- <img src="{{ asset("/bower_components/adminlte/dist/img/user2-160x160.jpg") }}" class="img-circle" alt="User Image" /> --}}
+                            <img src="/uploads/avatars/{{ Auth::user()->avatar }}" class="img-circle" alt="User Image"/>
                             <p>
-                                {{ Auth::user()->name }} - Web Developer
+                                {{ Auth::user()->name }} - MMI Administrator
                                 
                             </p>
                         </li>
@@ -42,7 +43,8 @@
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                {{-- <a href="#" class="btn btn-default btn-flat">Profile</a> --}}
+                                 <a href="{{ url('/admin/profile')}}" class="btn btn-default btn-flat">Profile</a>
                             </div>
                             <div class="pull-right">
                                 

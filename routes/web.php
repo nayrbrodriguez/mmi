@@ -8,6 +8,8 @@ Route::group([
 	], function () {
 // Route::get('/', 'GeneralController@backup');
 Route::get('/backup', 'GeneralController@backup');
+Route::get('/profile', 'UserController@index');
+Route::post('/profile', 'UserController@update');
 // General Information
 // Route::get('/summernote', 'GeneralController@index');
 // Route::post('/create_gen_info', 'GeneralController@insert');
