@@ -6,6 +6,16 @@ Route::group([
 	'middleware' => 'auth',
 	'prefix' => 'admin'
 	], function () {
+
+//Banner
+Route::get('/create_banner', 'BannerController@index');
+Route::post('/create_banner', 'BannerController@insert');
+Route::get('/banner', 'BannerController@view');
+Route::get('/view_banner/{id}', 'BannerController@read');
+Route::get('/delete_banner/{id}', 'BannerController@delete');
+Route::get('/edit_banner/{id}', 'BannerController@edit');
+Route::post('/update_banner', 'BannerController@update');
+
 // Route::get('/', 'GeneralController@backup');
 Route::get('/backup', 'GeneralController@backup');
 Route::get('/profile', 'UserController@index');

@@ -8,7 +8,7 @@
           <ul class="sidebar-menu">
             <li class="header">MENU</li>
             <!-- Optionally, you can add icons to the links -->
-            <li class=""><a href="#"><i class="fa fa-home"></i> <span>Home</span></a></li>
+            <li class="{{ Request::is('admin/banner') ? "active" : ""}}"><a href="{{ url('admin/banner')}}"><i class="fa fa-home"></i> <span>Home</span></a></li>
             <li class="treeview {{ Request::is('admin/gen_info', 'admin/about_president','admin/vision_mission','admin/about_logo','admin/core_values','admin/core_competencies','admin/grad_attribute','admin/academic_policy') ? "active" : "" }}">
               <a href="#"><i class="fa fa-link"></i> <span>About</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
