@@ -14,6 +14,22 @@ class BannerController extends Controller
     	return view('admin.pages.banner.agen_info');
     }
 
+    public function search(Request $request){
+        if ($request->ajax()) {
+            $output="";
+            $department=DB::table('tb_banner')->where('title','LIKE','%'.$request->search.'%')->get();
+            if ($department) {
+                foreach ($department as $key => $depart) {
+                    $output.='<tr>'.
+                             '<td>'.'<a href="admin/view_banner/'.$depart->id.'">'.$depart->title.'</a>'.'</td>'.
+                             '</tr>';
+
+                }
+                    return Response($output);
+            }
+        }
+        
+    }
    
 
     public function insert(Request $request){

@@ -1,7 +1,7 @@
 @extends('admin.admin_template')
 
 @section('title')
-  Update {!!$title->name!!}
+  Update {!!$title->title!!}
 @endsection
   
 
@@ -13,9 +13,9 @@
       <div class="panel-group">
     <div class="panel panel-default">
     <div class="pull-right">
-                  <a href="{{url('admin/create_banner')}}" class="btn btn-primary ">Add Administrative </a>
+                  <a href="{{url('admin/add_news')}}" class="btn btn-primary ">Add News</a>
                 </div>
-      <div class="panel-heading"><h3>Administrative Officer</h3>
+      <div class="panel-heading"><h3>News</h3>
       <div class="form-group">
           <input class="form-control" type="text" id="search"  name="search" placeholder="Search"></input>
         </div>
@@ -24,7 +24,7 @@
          <table id="example1" class="table table-bordered table-striped">
                     <thead>
                       <tr>
-                        <th>Administrative Officer List</th>
+                        <th>News List</th>
                         
                         {{-- <th width="15%"><center>Action</center></th> --}}
                       </tr>
@@ -33,7 +33,7 @@
           @foreach($data as $key => $gen)
                       <tr>
                         {{-- <td>{!!$gen->title!!}</td> --}}
-            <td><a href="{{url('admin/view_administrative', array($gen->id))}}" >{!!$gen->name!!}</a></td>
+            <td><a href="{{url('admin/view_news', array($gen->id))}}" >{!!$gen->title!!}</a></td>
             {{-- <td>
               <a href="{{url('view_course_offering', array($gen->id))}}" class="btn btn-primary">View</a>
               <a href="{{url('edit_course_offering',array($gen->id))}}" class="btn btn-info">Edit</a>
@@ -59,28 +59,32 @@
         <h4>@yield('title')</h4>
       </div>
       <div class="panel-body">
-        <form action="{{ url('admin/update_administrative') }}" method="post" enctype="multipart/form-data">
+
+
+      <form action="{{ url('admin/update_news') }}" method="post" enctype="multipart/form-data">
           <div class="form-group">
 
-            <label for="name">Name</label>
+            <label for="title">Title</label>
             <input type="hidden" name="id" value="{!!$title->id!!}">
-            <input type="text" name="name" class="form-control" value="{!!$title->name!!}">
+            <input type="text" name="title" class="form-control" value="{!!$title->title!!}">
           </div>
           <div class="form-group">
-            <label for="position">Position</label>
-            <input type="text" name="position" class="form-control" value="{!!$title->position!!}">
+            <label for="date">Date</label>
+            <input type="text" name="date" placeholder="YYYY/MM/DD" class="form-control" value="{!!$title->date!!}">
           </div>
           <div class="form-group">
             <label for="image">Image</label>
             <input type="file" name="image" class="form-control" value="{!!$title->image!!}">
           </div>
           <div class="form-group">
-            <label for="number">Contact Number</label>
-            <input type="text" name="number" class="form-control" value="{!!$title->number!!}">
+            <label for="description">Short Description</label>
+            <textarea class="form-control"  name="description" rows="5" id="comment">{!!$title->description!!}</textarea>
           </div>
           <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="text" name="email" class="form-control" value="{!!$title->email!!}">
+            <label for="content">Content</label>
+             <textarea id="summernote" name="summernote" class="form-control">
+              {!! $title->content !!}
+            </textarea>
           </div>
           <div class="form-group">
             <input type="submit" name="send" id="send" value="Update" class="btn btn-success">
@@ -89,6 +93,41 @@
 
           </div>
         </form>
+        {{-- <form action="{{ url('admin/update_news') }}" method="post" enctype="multipart/form-data">
+          <div class="form-group">
+
+            <label for="title">Title</label>
+            <input type="hidden" name="id" value="{!!$title->id!!}">
+            <input type="text" name="title" class="form-control" value="{!!$title->title!!}">
+          </div>
+
+          <div class="form-group">
+            <label for="date">Date</label>
+            <input type="text" name="date" class="form-control" value="{!!$title->date!!}">
+          </div>
+
+           <div class="form-group">
+            <label for="Image">Image</label>
+            <input type="file" name="title" class="form-control" value="{!!$title->image!!}">
+          </div>
+
+           <div class="form-group">
+            <label for="description">Short Description</label>
+            <input type="text" name="description" class="form-control" value="{!!$title->description!!}">
+          </div>
+
+          <div class="form-group">
+            <textarea id="summernote" name="summernote" class="form-control">
+              {!! $title->content !!}
+            </textarea>
+          </div>
+          <div class="form-group">
+            <input type="submit" name="send" id="send" value="Update" class="btn btn-success">
+            <a href="{{url('admin/about_news')}}" class="btn btn-danger">Back</a>
+            {!! csrf_field() !!}
+
+          </div>
+        </form> --}}
       </div>
     </div>
        
@@ -134,7 +173,7 @@
         <h4>@yield('title')</h4>
       </div>
       <div class="panel-body">
-        <form action="{{ url('update_arabic_department') }}" method="post">
+        <form action="{{ url('update_scholarship') }}" method="post">
           <div class="form-group">
 
             <label for="title">Title</label>

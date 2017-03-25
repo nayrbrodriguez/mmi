@@ -1,7 +1,7 @@
 <?php
 
-
-
+ 
+ 
 Route::group([
 	'middleware' => 'auth',
 	'prefix' => 'admin'
@@ -10,6 +10,7 @@ Route::group([
 //Banner
 Route::get('/create_banner', 'BannerController@index');
 Route::post('/create_banner', 'BannerController@insert');
+Route::get('/banner_search', 'BannerController@search');
 Route::get('/banner', 'BannerController@view');
 Route::get('/view_banner/{id}', 'BannerController@read');
 Route::get('/delete_banner/{id}', 'BannerController@delete');
@@ -36,6 +37,8 @@ Route::get('/view_about_president/{id}', 'PresidentController@read');
 // Route::get('/delete_about_president/{id}', 'PresidentController@delete');
 Route::get('/edit_about_president/{id}', 'PresidentController@edit');
 Route::post('/update_about_president', 'PresidentController@update');
+
+
 
 //Vision and Mission
 // Route::post('/create_vision_mission', 'VisionController@insert');
@@ -85,13 +88,14 @@ Route::get('/delete_academic_policy/{id}', 'AcademicController@delete');
 Route::get('/edit_academic_policy/{id}', 'AcademicController@edit');
 Route::post('/update_academic_policy', 'AcademicController@update');
 
-//Academic Policies
-// Route::post('/create_academic_policy', 'AcademicController@insert');
-// Route::get('/about_academic_policy', 'AcademicController@view');
-// Route::get('/view_academic_policy/{id}', 'AcademicController@read');
-// Route::get('/delete_academic_policy/{id}', 'AcademicController@delete');
-// Route::get('/edit_academic_policy/{id}', 'AcademicController@edit');
-// Route::post('/update_academic_policy', 'AcademicController@update');
+//News
+Route::post('/create_news', 'NewsController@insert');
+Route::get('/add_news', 'NewsController@index');
+Route::get('/about_news', 'NewsController@view');
+Route::get('/view_news/{id}', 'NewsController@read');
+Route::get('/delete_news/{id}', 'NewsController@delete');
+Route::get('/edit_news/{id}', 'NewsController@edit');
+Route::post('/update_news', 'NewsController@update');
 
 //Requirements
 // Route::post('/create_requirement', 'RequirementController@insert');
@@ -136,29 +140,33 @@ Route::get('/delete_course_offering/{id}', 'CourseController@delete');
 Route::get('/edit_course_offering/{id}', 'CourseController@edit');
 Route::post('/update_course_offering', 'CourseController@update');
 
-//Scholarships
-// Route::post('/create_scholarship', 'ScholarshipController@insert');
-// Route::get('/scholarship', 'ScholarshipController@view');
-// Route::get('/view_scholarship/{id}', 'ScholarshipController@read');
-// Route::get('/delete_scholarship/{id}', 'ScholarshipController@delete');
-// Route::get('/edit_scholarship/{id}', 'ScholarshipController@edit');
-// Route::post('/update_scholarship', 'ScholarshipController@update');
+// Scholarships
+Route::post('/create_scholarship', 'ScholarshipController@insert');
+Route::get('/add_scholarship', 'ScholarshipController@index');
+Route::get('/scholarship', 'ScholarshipController@view');
+Route::get('/view_scholarship/{id}', 'ScholarshipController@read');
+Route::get('/delete_scholarship/{id}', 'ScholarshipController@delete');
+Route::get('/edit_scholarship/{id}', 'ScholarshipController@edit');
+Route::post('/update_scholarship', 'ScholarshipController@update');
 
 //Administrative
-// Route::post('/create_administrative', 'AdministrativeController@insert');
-// Route::get('/administrative', 'AdministrativeController@view');
-// Route::get('/view_administrative/{id}', 'AdministrativeController@read');
-// Route::get('/delete_administrative/{id}', 'AdministrativeController@delete');
-// Route::get('/edit_administrative/{id}', 'AdministrativeController@edit');
-// Route::post('/update_administrative', 'AdministrativeController@update');
+Route::get('/add_administrative', 'AdministrativeController@index');
+Route::post('/create_administrative', 'AdministrativeController@insert');
+Route::get('/administrative', 'AdministrativeController@view');
+Route::get('/view_administrative/{id}', 'AdministrativeController@read');
+Route::get('/delete_administrative/{id}', 'AdministrativeController@delete');
+Route::get('/edit_administrative/{id}', 'AdministrativeController@edit');
+Route::post('/update_administrative', 'AdministrativeController@update');
 
-//Alumni
-// Route::post('/create_alumni', 'AlumniController@insert');
-// Route::get('/alumni', 'AlumniController@view');
-// Route::get('/view_alumni/{id}', 'AlumniController@read');
-// Route::get('/delete_alumni/{id}', 'AlumniController@delete');
-// Route::get('/edit_alumni/{id}', 'AlumniController@edit');
-// Route::post('/update_alumni', 'AlumniController@update');
+// Alumni
+Route::get('/create_alumni', 'AlumniController@index');
+Route::get('/alumni_search', 'AlumniController@search');
+Route::post('/add_alumni', 'AlumniController@insert');
+Route::get('/alumni', 'AlumniController@view');
+Route::get('/view_alumni/{id}', 'AlumniController@read');
+Route::get('/delete_alumni/{id}', 'AlumniController@delete');
+Route::get('/edit_alumni/{id}', 'AlumniController@edit');
+Route::post('/update_alumni', 'AlumniController@update');
 
 //Arabic Dept
 Route::post('/create_arabic_department', 'ArabdeptController@insert');
@@ -175,4 +183,18 @@ Route::post('/update_arabic_department', 'ArabdeptController@update');
 Auth::routes();
 
 Route::get('/admin', 'HomeController@index');
+
+//Users page
+Route::get('/home', 'WebController@home');
+Route::get('/about', 'WebController@about');
+Route::get('/news', 'WebController@news');
+Route::get('/admission', 'WebController@admission');
+Route::get('/course_offering', 'WebController@course_offering');
+Route::get('/scholarship', 'WebController@scholarship');
+Route::get('/administrative', 'WebController@administrative');
+Route::get('/alumni', 'WebController@alumni');
+Route::get('/arabic_department', 'WebController@arabic_department');
+Route::get('/contact_us', 'WebController@contact_us');
+
+
 

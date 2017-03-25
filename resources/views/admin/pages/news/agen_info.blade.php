@@ -1,7 +1,7 @@
 @extends('admin.admin_template')
 
 @section('title')
-	Create Administrative
+	Create News
 @endsection
 
 
@@ -13,31 +13,34 @@
 				<h4>@yield('title')</h4>
 			</div>
 			<div class="panel-body">
-				<form action="{{ url('admin/create_administrative') }}" method="post" enctype="multipart/form-data">
+				<form  action="{{ url('admin/create_news') }}" method="post" enctype="multipart/form-data">
 					<div class="form-group">
-						<label for="name">Name</label>
-						<input type="text" name="name" class="form-control" value="{{old('name')}}">
+						<label for="title">Title</label>
+						<input type="text" name="title" class="form-control" value="{{old('title')}}">
 					</div>
 					<div class="form-group">
-						<label for="position">Position</label>
-						<input type="text" name="position" class="form-control" value="{{old('position')}}">
+						<label for="date">Date </label><i>  (Format: YYYY/MM/DD)</i>
+						<input type="text" name="date"  class="form-control" placeholder="YYYY/MM/DD" value="{{old('date')}}">
 					</div>
 					<div class="form-group">
 						<label for="image">Image</label>
 						<input type="file" name="image" class="form-control" value="{{old('image')}}">
 					</div>
-
 					<div class="form-group">
-						<label for="number">Contact Number</label>
-						<input type="text" name="number" class="form-control" value="{{old('number')}}">
+						<label for="description">Short Description</label>
+						<textarea name="description" class="form-control" rows="5" value="{{old('description')}}"></textarea>
+						
 					</div>
+					
 					<div class="form-group">
-						<label for="email">email</label>
-						<input type="text" name="email" class="form-control" value="{{old('email')}}">
+						<label for="description">Content</label>
+						<textarea id="summernote" name="summernote" class="form-control" >
+							{{old('summernote')}}
+						</textarea>
 					</div>
 					<div class="form-group">
 						<input type="submit" name="send" id="send" value="Publish" class="btn btn-success">
-						<a href="{{url('admin/administrative')}}" class="btn btn-danger">Back</a>
+						<a href="{{url('admin/about_news')}}" class="btn btn-danger">Back</a>
 						{!! csrf_field() !!}
 
 					</div>
@@ -59,4 +62,7 @@
         })
 
     </script>
+
+<script>
+
 @endsection

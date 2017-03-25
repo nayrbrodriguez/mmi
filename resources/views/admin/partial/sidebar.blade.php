@@ -23,7 +23,7 @@
               </ul>
             </li>
 
-            <li class=""><a href="#"><i class="fa fa-newspaper-o"></i> <span>News</span></a></li>
+            <li class="{{ Request::is('admin/about_news', 'admin/add_news','admin/update_news','admin/view_news') ? "active" : "" }}"><a href="{{url('admin/about_news')}}"><i class="fa fa-newspaper-o"></i> <span>News</span></a></li>
             <li class="treeview {{ Request::is('admin/requirement', 'admin/guidelines','admin/registration','admin/enrollment') ? "active" : "" }}">
               <a href="#"><i class="fa fa-institution"></i> <span>Admission</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
@@ -36,7 +36,7 @@
             <li class="{{ Request::is('admin/course_offering') ? "active" : "" }}"><a href="{{url('admin/course_offering')}}"><i class="fa fa-list"></i> <span>Course Offering</span></a></li>
             <li class="{{ Request::is('admin/scholarship') ? "active" : "" }}"><a href="{{url('admin/scholarship')}}"><i class="fa fa-th-list"></i> <span>Scholarships</span></a></li>
             <li class="{{ Request::is('admin/administrative') ? "active" : "" }}"><a href="{{url('admin/administrative')}}"><i class="fa fa-id-badge"></i> <span>Administrative</span></a></li>
-            <li class="{{ Request::is('alumni') ? "active" : "" }}"><a href="{{url('alumni')}}"><i class="fa fa-id-card"></i> <span>Alumni</span></a></li>
+            <li class="{{ Request::is('admin/alumni') ? "active" : "" }}"><a href="{{url('admin/alumni')}}"><i class="fa fa-id-card"></i> <span>Alumni</span></a></li>
             <li class="{{ Request::is('admin/arabic_department') ? "active" : "" }}"><a href="{{url('admin/arabic_department')}}"><i class="fa fa-id-card"></i> <span>Arabic Department</span></a></li>
             
           

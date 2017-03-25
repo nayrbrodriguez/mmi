@@ -1,7 +1,7 @@
 @extends('admin.admin_template')
 
 @section('title')
-  Administrative List
+  News Content
 @endsection
 
 
@@ -14,11 +14,11 @@
       <div class="panel-group">
     <div class="panel panel-default">
 <div class="pull-right">
-                  <a href="{{url('admin/add_administrative')}}" class="btn btn-primary ">Add Administrative</a>
+                  <a href="{{url('admin/add_news')}}" class="btn btn-primary ">Add News</a>
                 </div>
       
       <div class="panel-heading">
-      <h3>Administrative</h3>
+      <h3>News</h3>
         <div class="form-group">
           <input class="form-control" type="text" id="search"  name="search" placeholder="Search"></input>
         </div>
@@ -27,7 +27,7 @@
          <table id="example1" class="table table-bordered table-striped table-hover">
                     <thead>
                       <tr>
-                        <th>Administrative List</th>
+                        <th>News list</th>
                         
                         {{-- <th width="15%"><center>Action</center></th> --}}
                       </tr>
@@ -36,7 +36,7 @@
           @foreach($data as $key => $gen)
                       <tr>
                         {{-- <td>{!!$gen->title!!}</td> --}}
-            <td><a href="{{url('admin/view_administrative', array($gen->id))}}" >{!!$gen->name!!}</a></td>
+            <td><a href="{{url('admin/view_news', array($gen->id))}}" >{!!$gen->title!!}</a></td>
             {{-- <td>
               <a href="{{url('view_course_offering', array($gen->id))}}" class="btn btn-primary">View</a>
               <a href="{{url('edit_course_offering',array($gen->id))}}" class="btn btn-info">Edit</a>
@@ -60,12 +60,12 @@
     <div class="panel-group">
     <div class="panel panel-default">
       <div class="panel-heading">
-       {{--  <a href="{{url('edit_arabic_department',array($title->id))}}" class="btn btn-info">Edit</a>
+       {{--  <a href="{{url('edit_scholarship',array($title->id))}}" class="btn btn-info">Edit</a>
        <a onclick="return confirm('Are you sure you want to delete {!!$title->title!!}?')" href="{{url('delete_course_offering',array($title->id))}}" class="btn btn-danger ">Delete</a> --}}
       </div>
       <div class="panel-heading">{{-- {!!$title->title or "Title" !!}  --}}</div>
       <div class="panel-body">{{-- {!!$title->description or "Department"!!} --}}
-      Choose any Administrative in the list to view, update or delete 
+      Choose any News to view, update or delete 
       <br>
       <br>
       <br>
@@ -88,17 +88,6 @@
     </div>
   </div>
 </div>
-<script type="text/javascript">
-  $('#search').on('keyup',function() {
-    $value=$(this).val();
-    $.ajax({
-      type: 'get',
-      url :'{{URL::to('admin/administrative_search')}}',
-      data :{'search':$value},
-      success:function(data){
-        $('tbody').html(data);
-      }
-    });
-  })
-</script>
+@include('admin.summernote.search')
+
 @endsection

@@ -1,31 +1,32 @@
 @extends('admin.admin_template')
 
 @section('title')
-	Create
+	Create Scholarship Offer
 @endsection
 
 
 @section('content')
 	
+
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<h4>@yield('title')</h4>
 			</div>
 			<div class="panel-body">
-				<form action="{{ url('admin/create_gen_info') }}" method="post">
+				<form action="{{ url('admin/create_scholarship') }}" method="post">
 					<div class="form-group">
 						<label for="title">Title</label>
-						<input type="text" name="title" class="form-control">
+						<input type="text" name="title" class="form-control" value="{{old('title')}}">
 					</div>
 					<div class="form-group">
 						<label for="description">Content</label>
-						<textarea id="summernote" name="summernote" class="form-control">
-							
+						<textarea id="summernote" name="summernote" class="form-control" >
+							{{old('summernote')}}
 						</textarea>
 					</div>
 					<div class="form-group">
 						<input type="submit" name="send" id="send" value="Publish" class="btn btn-success">
-						<a href="{{url('admin/gen_info')}}" class="btn btn-danger">Back</a>
+						<a href="{{url('admin/scholarship')}}" class="btn btn-danger">Back</a>
 						{!! csrf_field() !!}
 
 					</div>
@@ -38,7 +39,7 @@
         $(document).ready(function(argument) {
             $('#summernote').summernote({
                 height: '200px',
-                placeholder:'Content here....',
+                placeholder:'Place your content here',
                 fontNames:['Arial','Arial Black','Khmer OS'],
             })
         })

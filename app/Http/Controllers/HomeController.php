@@ -23,6 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin.pages.general.vgen_info');
+       $data = DB::table('tb_banner')->paginate(10);
+        return view('admin.pages.alumni.vgen_info',compact('data'));
     }
 }

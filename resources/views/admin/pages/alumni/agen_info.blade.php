@@ -1,7 +1,7 @@
 @extends('admin.admin_template')
 
 @section('title')
-	Create
+	Create Alumni
 @endsection
 
 
@@ -12,20 +12,23 @@
 				<h4>@yield('title')</h4>
 			</div>
 			<div class="panel-body">
-				<form action="{{ url('admin/create_gen_info') }}" method="post">
+				<form action="{{ url('admin/add_alumni') }}" method="post">
 					<div class="form-group">
-						<label for="title">Title</label>
-						<input type="text" name="title" class="form-control">
+						<label for="name">Name</label>
+						<input type="text" name="name" class="form-control" value="{{old('name')}}">
 					</div>
 					<div class="form-group">
-						<label for="description">Content</label>
-						<textarea id="summernote" name="summernote" class="form-control">
-							
-						</textarea>
+						<label for="year_grad">Year Graduated</label>
+						<input type="text" name="year_grad" class="form-control" value="{{old('year_grad')}}">
 					</div>
+					<div class="form-group">
+						<label for="course">Course</label>
+						<input type="text" name="course" class="form-control" value="{{old('course')}}">
+					</div>
+					
 					<div class="form-group">
 						<input type="submit" name="send" id="send" value="Publish" class="btn btn-success">
-						<a href="{{url('admin/gen_info')}}" class="btn btn-danger">Back</a>
+						<a href="{{url('admin/alumni')}}" class="btn btn-danger">Back</a>
 						{!! csrf_field() !!}
 
 					</div>
@@ -33,18 +36,5 @@
 			</div>
 		
 	</div>
-	<script type="text/javascript">
-
-        $(document).ready(function(argument) {
-            $('#summernote').summernote({
-                height: '200px',
-                placeholder:'Content here....',
-                fontNames:['Arial','Arial Black','Khmer OS'],
-            })
-        })
-        $('#clear').on('click',function() {
-        $('#summernote').summernote('code',null);           
-        })
-
-    </script>
+	
 @endsection
