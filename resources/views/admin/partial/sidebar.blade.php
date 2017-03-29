@@ -8,22 +8,23 @@
           <ul class="sidebar-menu">
             <li class="header">MENU</li>
             <!-- Optionally, you can add icons to the links -->
-            <li class="{{ Request::is('admin/banner') ? "active" : ""}}"><a href="{{ url('admin/banner')}}"><i class="fa fa-home"></i> <span>Home</span></a></li>
-            <li class="treeview {{ Request::is('admin/gen_info', 'admin/about_president','admin/vision_mission','admin/about_logo','admin/core_values','admin/core_competencies','admin/grad_attribute','admin/academic_policy') ? "active" : "" }}">
-              <a href="#"><i class="fa fa-link"></i> <span>About</span> <i class="fa fa-angle-left pull-right"></i></a>
-              <ul class="treeview-menu">
-                <li class="{{ Request::is('admin/gen_info') ? "active" : "" }}"><a href="{{url('admin/gen_info')}}">General Information</a></li>
-                <li class="{{ Request::is('admin/about_president') ? "active" : "" }}"><a href="{{url('admin/about_president')}}">About President</a></li>
-                <li class="{{ Request::is('admin/vision_mission') ? "active" : "" }}"><a href="{{url('admin/vision_mission')}}">Vision and Mission</a></li>
-                <li class="{{ Request::is('admin/about_logo') ? "active" : "" }}"><a href="{{url('admin/about_logo')}}">About the Logo</a></li>
-                <li class="{{ Request::is('admin/core_values') ? "active" : "" }}"><a href="{{url('admin/core_values')}}">Core Values</a></li>
-                <li class="{{ Request::is('admin/core_competencies') ? "active" : "" }}"><a href="{{url('admin/core_competencies')}}">Core Competencies</a></li>
-                <li class="{{ Request::is('admin/grad_attribute') ? "active" : "" }}"><a href="{{url('admin/grad_attribute')}}">Graduate Attributes</a></li>
-                <li class="{{ Request::is('admin/academic_policy') ? "active" : "" }}"><a href="{{url('admin/academic_policy')}}">Academic Policies</a></li>
-              </ul>
+
+            {{-- HOME --}}
+            <li class="{{ Request::is('admin/banner', 'admin/add_banner','admin/update_banner','admin/view_banner') ? "active" : ""}}">
+                <a href="{{ url('admin/banner')}}"><i class="fa fa-home"></i> <span>Home</span></a>
             </li>
 
-            <li class="{{ Request::is('admin/about_news', 'admin/add_news','admin/update_news','admin/view_news') ? "active" : "" }}"><a href="{{url('admin/about_news')}}"><i class="fa fa-newspaper-o"></i> <span>News</span></a></li>
+            {{-- About --}}
+            <li class="{{ Request::is('admin/about', 'admin/add_about','admin/update_about','admin/view_about') ? "active" : "" }}">
+                <a href="{{url('admin/about')}}"><i class="fa fa-link"></i> <span>About</span> </a>
+            </li>
+
+            {{-- News --}}
+            <li class="{{ Request::is('admin/about_news', 'admin/add_news','admin/update_news','admin/view_news') ? "active" : "" }}">
+                <a href="{{url('admin/about_news')}}"><i class="fa fa-newspaper-o"></i> <span>News</span></a>
+            </li>
+
+            {{-- Admission --}}
             <li class="treeview {{ Request::is('admin/requirement', 'admin/guidelines','admin/registration','admin/enrollment') ? "active" : "" }}">
               <a href="#"><i class="fa fa-institution"></i> <span>Admission</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
@@ -33,11 +34,31 @@
                 <li class="{{ Request::is('admin/enrollment') ? "active" : "" }}"><a href="{{url('admin/enrollment')}}">Enrollment</a></li>
               </ul>
             </li>
-            <li class="{{ Request::is('admin/course_offering') ? "active" : "" }}"><a href="{{url('admin/course_offering')}}"><i class="fa fa-list"></i> <span>Course Offering</span></a></li>
-            <li class="{{ Request::is('admin/scholarship') ? "active" : "" }}"><a href="{{url('admin/scholarship')}}"><i class="fa fa-th-list"></i> <span>Scholarships</span></a></li>
-            <li class="{{ Request::is('admin/administrative') ? "active" : "" }}"><a href="{{url('admin/administrative')}}"><i class="fa fa-id-badge"></i> <span>Administrative</span></a></li>
-            <li class="{{ Request::is('admin/alumni') ? "active" : "" }}"><a href="{{url('admin/alumni')}}"><i class="fa fa-id-card"></i> <span>Alumni</span></a></li>
-            <li class="{{ Request::is('admin/arabic_department') ? "active" : "" }}"><a href="{{url('admin/arabic_department')}}"><i class="fa fa-id-card"></i> <span>Arabic Department</span></a></li>
+
+            {{-- Course Offering --}}
+            <li class="{{ Request::is('admin/course_offering', 'admin/add_course_offering','admin/update_course_offering','admin/view_course_offering') ? "active" : "" }}">
+                <a href="{{url('admin/course_offering')}}"><i class="fa fa-list"></i> <span>Course Offering</span></a>
+            </li>
+            
+            {{-- Scholarship --}}
+            <li class="{{ Request::is('admin/scholarship', 'admin/add_scholarship','admin/update_scholarship','admin/view_scholarship') ? "active" : "" }}">
+                <a href="{{url('admin/scholarship')}}"><i class="fa fa-th-list"></i> <span>Scholarships</span></a>
+            </li>
+            
+            {{-- Administrative --}}
+            <li class="{{ Request::is('admin/administrative', 'admin/add_administrative','admin/update_administrative','admin/view_administrative') ? "active" : "" }}">
+                <a href="{{url('admin/administrative')}}"><i class="fa fa-id-badge"></i> <span>Administrative</span></a>
+            </li>
+            
+            {{-- Alumni --}}
+            <li class="{{ Request::is('admin/alumni', 'admin/add_alumni','admin/update_alumni','admin/view_alumni') ? "active" : "" }}">
+                <a href="{{url('admin/alumni')}}"><i class="fa fa-id-card"></i> <span>Alumni</span></a>
+            </li>
+            
+            {{-- Arabic Department --}}
+            <li class="{{ Request::is('admin/arabic_department', 'admin/add_arabic_department','admin/update_arabic_department','admin/view_arabic_department') ? "active" : "" }}">
+                <a href="{{url('admin/arabic_department')}}"><i class="fa fa-id-card"></i> <span>Arabic Department</span></a>
+            </li>
             
           
           </ul><!-- /.sidebar-menu -->

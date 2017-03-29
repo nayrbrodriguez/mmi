@@ -21,72 +21,15 @@ Route::post('/update_banner', 'BannerController@update');
 Route::get('/backup', 'GeneralController@backup');
 Route::get('/profile', 'UserController@index');
 Route::post('/profile', 'UserController@update');
-// General Information
-// Route::get('/summernote', 'GeneralController@index');
-// Route::post('/create_gen_info', 'GeneralController@insert');
-Route::get('/gen_info', 'GeneralController@view');
-Route::get('/view_gen_info/{id}', 'GeneralController@read');
-// Route::get('/delete_gen_info/{id}', 'GeneralController@delete');
-Route::get('/edit_gen_info/{id}', 'GeneralController@edit');
-Route::post('/update_gen_info', 'GeneralController@update');
 
-//About President
-// Route::post('/create_about_president', 'PresidentController@insert');
-Route::get('/about_president', 'PresidentController@view');
-Route::get('/view_about_president/{id}', 'PresidentController@read');
-// Route::get('/delete_about_president/{id}', 'PresidentController@delete');
-Route::get('/edit_about_president/{id}', 'PresidentController@edit');
-Route::post('/update_about_president', 'PresidentController@update');
-
-
-
-//Vision and Mission
-// Route::post('/create_vision_mission', 'VisionController@insert');
-Route::get('/vision_mission', 'VisionController@view');
-Route::get('/view_vision_mission/{id}', 'VisionController@read');
-Route::get('/delete_vision_mission/{id}', 'VisionController@delete');
-Route::get('/edit_vision_mission/{id}', 'VisionController@edit');
-Route::post('/update_vision_mission', 'VisionController@update');
-
-//LOGO
-// Route::post('/create_logo', 'LogoController@insert');
-Route::get('/about_logo', 'LogoController@view');
-Route::get('/view_logo/{id}', 'LogoController@read');
-Route::get('/delete_logo/{id}', 'LogoController@delete');
-Route::get('/edit_logo/{id}', 'LogoController@edit');
-Route::post('/update_logo', 'LogoController@update');
-
-//Corevalues
-// Route::post('/create_core_values', 'CorevaluesController@insert');
-Route::get('/core_values', 'CorevaluesController@view');
-Route::get('/view_core_values/{id}', 'CorevaluesController@read');
-Route::get('/delete_core_values/{id}', 'CorevaluesController@delete');
-Route::get('/edit_core_values/{id}', 'CorevaluesController@edit');
-Route::post('/update_core_values', 'CorevaluesController@update');
-
-//Core Competencies
-// Route::post('/create_core_competencies', 'CorecompetenciesController@insert');
-Route::get('/core_competencies', 'CorecompetenciesController@view');
-Route::get('/view_core_competencies/{id}', 'CorecompetenciesController@read');
-Route::get('/delete_core_competencies/{id}', 'CorecompetenciesController@delete');
-Route::get('/edit_core_competencies/{id}', 'CorecompetenciesController@edit');
-Route::post('/update_core_competencies', 'CorecompetenciesController@update');
-
-//Graduate Attributes
-// Route::post('/create_grad_attribute', 'GraduateattributeController@insert');
-Route::get('/grad_attribute', 'GraduateattributeController@view');
-Route::get('/view_grad_attribute/{id}', 'GraduateattributeController@read');
-Route::get('/delete_grad_attribute/{id}', 'GraduateattributeController@delete');
-Route::get('/edit_grad_attribute/{id}', 'GraduateattributeController@edit');
-Route::post('/update_grad_attribute', 'GraduateattributeController@update');
-
-//Academic Policies
-// Route::post('/create_academic_policy', 'AcademicController@insert');
-Route::get('/academic_policy', 'AcademicController@view');
-Route::get('/view_academic_policy/{id}', 'AcademicController@read');
-Route::get('/delete_academic_policy/{id}', 'AcademicController@delete');
-Route::get('/edit_academic_policy/{id}', 'AcademicController@edit');
-Route::post('/update_academic_policy', 'AcademicController@update');
+//About
+Route::post('/create_about', 'AboutController@insert');
+Route::get('/add_about', 'AboutController@index');
+Route::get('/about', 'AboutController@view');
+Route::get('/view_about/{id}', 'AboutController@read');
+Route::get('/delete_about/{id}', 'AboutController@delete');
+Route::get('/edit_about/{id}', 'AboutController@edit');
+Route::post('/update_about', 'AboutController@update');
 
 //News
 Route::post('/create_news', 'NewsController@insert');
@@ -185,9 +128,11 @@ Auth::routes();
 Route::get('/admin', 'HomeController@index');
 
 //Users page
-Route::get('/home', 'WebController@home');
+Route::get('/', 'WebController@home');
 Route::get('/about', 'WebController@about');
+Route::get('/about/{id}', 'WebController@about_read');
 Route::get('/news', 'WebController@news');
+Route::get('/news/{id}', 'WebController@news_read');
 Route::get('/admission', 'WebController@admission');
 Route::get('/course_offering', 'WebController@course_offering');
 Route::get('/scholarship', 'WebController@scholarship');
@@ -195,6 +140,7 @@ Route::get('/administrative', 'WebController@administrative');
 Route::get('/alumni', 'WebController@alumni');
 Route::get('/arabic_department', 'WebController@arabic_department');
 Route::get('/contact_us', 'WebController@contact_us');
+Route::get('/blank', 'WebController@blank');
 
 
 

@@ -65,7 +65,7 @@
       </div>
       <div class="panel-heading"></div>
       <div class="panel-body">
-      <img src="/uploads/news/{{ $title->image }}" style="width:150px; height: 150px; float: left;  margin-right:25px; border:1px black solid;">
+      <img src="/uploads/news/{{ $title->image }}" style="width:auto; height: 200px; float: left;  margin-right:25px; border:1px black solid;">
       <table class="table table-striped">
   
       <tr>

@@ -45,7 +45,7 @@ class NewsController extends Controller
     			$filename = time().'.'.$photo->getClientOriginalExtension();
 
     			
- 				Image::make($photo)->resize(300, 300)->save(public_path('uploads/news/' . $filename));
+ 				Image::make($photo)->resize(370, 203)->save(public_path('uploads/news/' . $filename));
     			DB::table('tb_news')->insert([
     				'title'=>$request['title'],
     				'date'=>$request['date'],
@@ -97,19 +97,20 @@ class NewsController extends Controller
     }
 
     public function edit($id){
-    	$this->validate($request,[
-        'title'=>'required||max:255',
-        'image' => 'image|mimes:jpg,png,jpeg',
-        'date' => 'required|date|date_format:Y/m/d',
-        
-    	]);
-
+    	
     	$data = DB::table('tb_news')->paginate(10);
     	$title=DB::table('tb_news')->where('id',$id)->first();
     	return view('admin.pages.news.egen_info', compact('data','title'));
     }
 
     public function update(Request $request){
+    	$this->validate($request,[
+        'title'=>'required||max:255',
+        'image' => 'image|mimes:jpg,png,jpeg',
+        'date' => 'required|date|date_format:Y-m-d',
+        
+    	]);
+
     	 $banner = DB::table('tb_news')->where('id',$request['id'])->first();
     	if ($request->hasFile('image')) {
     			$photo = $request->file('image');
@@ -126,7 +127,7 @@ class NewsController extends Controller
 
             }
     			
- 				Image::make($photo)->resize(300, 300)->save(public_path('uploads/news/' . $filename));
+ 				Image::make($photo)->resize(370, 203)->save(public_path('uploads/news/' . $filename));
     			DB::table('tb_news')->where('id',$request['id'])->update([
     			
     			
