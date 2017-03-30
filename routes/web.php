@@ -19,6 +19,7 @@ Route::post('/update_banner', 'BannerController@update');
 
 // Route::get('/', 'GeneralController@backup');
 Route::get('/backup', 'GeneralController@backup');
+Route::get('/', 'BannerController@view');
 Route::get('/profile', 'UserController@index');
 Route::post('/profile', 'UserController@update');
 
@@ -40,37 +41,15 @@ Route::get('/delete_news/{id}', 'NewsController@delete');
 Route::get('/edit_news/{id}', 'NewsController@edit');
 Route::post('/update_news', 'NewsController@update');
 
-//Requirements
-// Route::post('/create_requirement', 'RequirementController@insert');
-Route::get('/requirement', 'RequirementController@view');
-Route::get('/view_requirement/{id}', 'RequirementController@read');
-Route::get('/delete_requirement/{id}', 'RequirementController@delete');
-Route::get('/edit_requirement/{id}', 'RequirementController@edit');
-Route::post('/update_requirement', 'RequirementController@update');
+//Admission
+Route::post('/create_admission', 'AdmissionController@insert');
+Route::get('/add_admission', 'AdmissionController@index');
+Route::get('/admission', 'AdmissionController@view');
+Route::get('/view_admission/{id}', 'AdmissionController@read');
+Route::get('/delete_admission/{id}', 'AdmissionController@delete');
+Route::get('/edit_admission/{id}', 'AdmissionController@edit');
+Route::post('/update_admission', 'AdmissionController@update');
 
-//Guidelines
-// Route::post('/create_guidelines', 'GuidelinesController@insert');
-Route::get('/guidelines', 'GuidelinesController@view');
-Route::get('/view_guidelines/{id}', 'GuidelinesController@read');
-Route::get('/delete_guidelines/{id}', 'GuidelinesController@delete');
-Route::get('/edit_guidelines/{id}', 'GuidelinesController@edit');
-Route::post('/update_guidelines', 'GuidelinesController@update');
-
-//Registration
-// Route::post('/create_registration', 'RegistrationController@insert');
-Route::get('/registration', 'RegistrationController@view');
-Route::get('/view_registration/{id}', 'RegistrationController@read');
-Route::get('/delete_registration/{id}', 'RegistrationController@delete');
-Route::get('/edit_registration/{id}', 'RegistrationController@edit');
-Route::post('/update_registration', 'RegistrationController@update');
-
-//Enrollment
-// Route::post('/create_enrollment', 'EnrollmentController@insert');
-Route::get('/enrollment', 'EnrollmentController@view');
-Route::get('/view_enrollment/{id}', 'EnrollmentController@read');
-Route::get('/delete_enrollment/{id}', 'EnrollmentController@delete');
-Route::get('/edit_enrollment/{id}', 'EnrollmentController@edit');
-Route::post('/update_enrollment', 'EnrollmentController@update');
 
 //Course Offering
 // Route::resource('queries', 'QueryController@search');
@@ -134,11 +113,17 @@ Route::get('/about/{id}', 'WebController@about_read');
 Route::get('/news', 'WebController@news');
 Route::get('/news/{id}', 'WebController@news_read');
 Route::get('/admission', 'WebController@admission');
+Route::get('/admission/{id}', 'WebController@admission_read');
 Route::get('/course_offering', 'WebController@course_offering');
-Route::get('/scholarship', 'WebController@scholarship');
+
+Route::get('/scholarships', 'WebController@scholarship');
+Route::get('/scholarships/{id}', 'WebController@scholarship_read');
 Route::get('/administrative', 'WebController@administrative');
+
 Route::get('/alumni', 'WebController@alumni');
+
 Route::get('/arabic_department', 'WebController@arabic_department');
+Route::get('/arabic_department/{id}', 'WebController@arabic_department_view');
 Route::get('/contact_us', 'WebController@contact_us');
 Route::get('/blank', 'WebController@blank');
 

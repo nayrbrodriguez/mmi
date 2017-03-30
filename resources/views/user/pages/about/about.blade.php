@@ -1,7 +1,7 @@
 @extends('user.user_layout')
 
 @section('title')
-  MMI Arabic Department
+  MMI About
 @endsection
 
 @section('content')

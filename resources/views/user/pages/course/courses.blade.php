@@ -1,7 +1,7 @@
 @extends('user.user_layout')
 
 @section('title')
-  MMI Arabic Department
+  MMI Course Offering
 @endsection
 
 @section('content')
@@ -10,20 +10,20 @@
 <div class="sub-content">
   <div class="container">
         <div class="about_header" >
-          Arabic Department
+          Course Offered
         </div>
     <div class="row">
-      <div class="span3">
+      <div class="span12">
           <div class="about_container" >
-        @foreach ($data as $about=>$title)
-            <a href="{{ url('/arabic_department',array( $title->id )) }}"><div class="about_title ">{{ $title->title}}</div></a>
-        @endforeach
+         
+          @foreach($data as $courses=>$course)
+            <h4 >{{ $course->course }}</h4>
+          @endforeach
+          
           </div>
           
       </div>
-      <div class="span9">
-       
-      </div>
+      
     </div> 
                
   </div>

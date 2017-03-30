@@ -34,46 +34,21 @@
                                     <ul class="nav sf-menu">
                                       <li class="{{ Request::is('/') ? "active" : ""}} li-first"><a href="{{ url('/')}}"><span class="">Home</span></a></li>
                                       <li class="{{ Request::is('about/*','about') ? "active" : ""}}"><a href="{{ url('/about')}}">About MMI</a>
-                                        {{-- <ul>
-                                          <li><a href="#">History</a></li>
-                                          <li><a href="#">President</a></li>
-                                          <li class="sub-menu"><a href="#">Company Profile</a>
-                                            <ul>
-                                              <li><a href="#">Our Capabilities</a></li>
-                                              <li><a href="#">Advantages</a></li>
-                                              <li><a href="#">Work Team</a></li>
-                                              <li><a href="#">Partnership</a></li>
-                                              <li><a href="#">Support</a></li>
-                                            </ul>
-                                          </li>
-                                          <li><a href="#">Our History</a></li>
-                                          <li><a href="#">Testimonials</a></li>
-                                        </ul> --}}
                                       </li>
-                                      <li class="{{ Request::is('/news','news/*') ? "active" : ""}}"><a href="{{ url('/news')}}">News</a></li>
-                                      <li class="{{ Request::is('/admission/*') ? "active" : ""}}"><a href="{{ url('/admission')}}">Admission</a></li>
-                                      <li class="{{ Request::is('/course_offering/*') ? "active" : ""}}"><a href="{{ url('/course_offering')}}">Course Offering</a></li>
-                                      <li class="{{ Request::is('/scholarship/*') ? "active" : ""}}"><a href="{{ url('/scholarship')}}">Scholarship</a></li>
-                                      <li class="{{ Request::is('/administrative/*') ? "active" : ""}}"><a href="{{ url('/administrative/*')}}">Administrative</a></li>
-                                      <li class="{{ Request::is('/alumni/*') ? "active" : ""}}"><a href="{{ url('/alumni')}}">Alumni</a></li>
-                                      <li class="{{ Request::is('/arabic_department/*') ? "active" : ""}}"><a href="{{ url('arabic_department')}}">Arabic Department</a>
-                                      {{-- <ul>
-                                      <li><a href="">Senior High</a></li> 
-                                      <li><a href="">Junior High</a></li>
-                                      <li><a href="">Elementary</a></li>  
-                                      <li><a href="">Kinder</a></li>  
-                                      </ul> --}}
+                                      <li class="{{ Request::is('news','news/*') ? "active" : ""}}"><a href="{{ url('/news')}}">News</a></li>
+                                      <li class="{{ Request::is('admission','admission/*') ? "active" : ""}}"><a href="{{ url('/admission')}}">Admission</a></li>
+                                      <li class="{{ Request::is('course_offering','course_offering/*') ? "active" : ""}}"><a href="{{ url('/course_offering')}}">Course Offering</a></li>
+                                      <li class="{{ Request::is('scholarships','scholarships/*') ? "active" : ""}}"><a href="{{ url('/scholarships')}}">Scholarships</a></li>
+                                      <li class="{{ Request::is('administrative') ? "active" : ""}}"><a href="{{ url('/administrative')}}">Administrative</a></li>
+                                      <li class="{{ Request::is('alumni','alumni/*') ? "active" : ""}}"><a href="{{ url('/alumni')}}">Alumni</a></li>
+                                      <li class="{{ Request::is('arabic_department','arabic_department/*') ? "active" : ""}}"><a href="{{ url('arabic_department')}}">Arabic Department</a>
+                                      
                                       </li>
-                                      <li class="{{ Request::is('/contact_us/*') ? "active" : ""}}"><a href="{{ url('/contact_us')}}">Contact Us</a></li>
+                                      <li class="{{ Request::is('contact_us','contact_us/*') ? "active" : ""}}"><a href="{{ url('/contact_us')}}">Contact Us</a></li>
 
                                     </ul>
                                 </div>
-                               <!--  <ul class="social-icons">
-                                    <li><a href="#"><img src="img/icon-2.png" alt=""></a></li>
-                                    <li><a href="#"><img src="img/icon-1.png" alt=""></a></li>
-                                    <!-- <li><a href="#"><img src="img/icon-3.png" alt=""></a></li>
-                                    <li><a href="#"><img src="img/icon-4.png" alt=""></a></li>
-                                </ul> -->
+                              
                             </div>
                         </div>
                      </div>   

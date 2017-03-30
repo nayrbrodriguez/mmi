@@ -25,14 +25,9 @@
             </li>
 
             {{-- Admission --}}
-            <li class="treeview {{ Request::is('admin/requirement', 'admin/guidelines','admin/registration','admin/enrollment') ? "active" : "" }}">
-              <a href="#"><i class="fa fa-institution"></i> <span>Admission</span> <i class="fa fa-angle-left pull-right"></i></a>
-              <ul class="treeview-menu">
-                <li class="{{ Request::is('admin/requirement') ? "active" : "" }}"><a href="{{url('admin/requirement')}}">Requirements</a></li>
-                <li class="{{ Request::is('admin/guidelines') ? "active" : "" }}"><a href="{{url('admin/guidelines')}}">Guidelines</a></li>
-                <li class="{{ Request::is('admin/registration') ? "active" : "" }}"><a href="{{url('admin/registration')}}">Registration</a></li>
-                <li class="{{ Request::is('admin/enrollment') ? "active" : "" }}"><a href="{{url('admin/enrollment')}}">Enrollment</a></li>
-              </ul>
+            <li class="{{ Request::is('admin/about_admission', 'admin/add_admission','admin/update_admission','admin/view_admission') ? "active" : "" }}">
+              <a href="{{ url('/admin/admission') }}"><i class="fa fa-institution"></i> <span>Admission</span></a>
+              
             </li>
 
             {{-- Course Offering --}}
