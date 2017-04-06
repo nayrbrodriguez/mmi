@@ -15,7 +15,11 @@ class AlumniController extends Controller
         if ($request->ajax()) {
             $output="";
             $mensahe="Are you sure you want to delete";
-            $department=DB::table('tb_alumni')->where('name','LIKE','%'.$request->search.'%')->get();
+            $department=DB::table('tb_alumni')->where('name','LIKE','%'.$request->search.'%')
+                                                ->orWhere('id','LIKE','%'.$request->search.'%')
+                                                ->orWhere('course','LIKE','%'.$request->search.'%')
+                                                ->orWhere('year_grad','LIKE','%'.$request->search.'%')
+                                                ->get();
             if ($department) {
                 foreach ($department as $key => $depart) {
                     $output.='<tr>'.
@@ -23,8 +27,8 @@ class AlumniController extends Controller
                              '<td>'.$depart->name.'</td>'.
                              '<td>'.$depart->year_grad.'</td>'.
                              '<td>'.$depart->course.'</td>'.
-                             '<td>'.'<a href="admin/edit_alumni/'.$depart->id.'" class="btn btn-info">Edit</a>'.
-                             '<a onclick="return confirm(`'.$mensahe.$depart->name.'?`)" href="admin/delete_alumni/'.$depart->id.'" class="btn btn-danger">Delete</a>'.
+                             '<td>'.'<a href="/admin/edit_alumni/'.$depart->id.'" class="btn btn-info">Edit</a>&nbsp;'.
+                             '<a onclick="return confirm(`'.$mensahe.$depart->name.'?`)" href="/admin/delete_alumni/'.$depart->id.'" class="btn btn-danger">Delete</a>'.
 
                              '</td>'.
                              '</tr>';
@@ -38,13 +42,15 @@ class AlumniController extends Controller
    
     public function insert(Request $request){
         $this->validate($request,[
+        'id'=>'required||max:10',
         'name'=>'required||max:255',
-        'year_grad'=>'required||max:4||min:4',
+        'year_grad'=>'required||max:4||min:4||date_format:Y',
         'course'=>'required||max:255',
         // 'description'=>'required',
         
         ]);
     	DB::table('tb_alumni')->insert([
+            'id'=>$request['id'],
     		'name'=>$request['name'],
     		'year_grad'=>$request['year_grad'],
     		'course'=>$request['course'],
@@ -80,14 +86,16 @@ class AlumniController extends Controller
 
     public function update(Request $request){
         $this->validate($request,[
+        'id'=>'required||max:10',
         'name'=>'required||max:255',
-        'year_grad'=>'required||max:4||min:4',
+        'year_grad'=>'required||max:4||min:4||date_format:Y',
         'course'=>'required||max:255',
         // 'description'=>'required',
         // 'attributes'=>array('name' => 'Name'),
         
         ]);
     	DB::table('tb_alumni')->where('id',$request['id'])->update([
+                'id'=>$request['id'],
     			'name'=>$request['name'],
     			'year_grad'=>$request['year_grad'],
     			'course'=>$request['course'],

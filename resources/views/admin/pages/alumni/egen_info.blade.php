@@ -14,6 +14,11 @@
         <form action="{{ url('admin/update_alumni') }}" method="post">
           <div class="form-group">
 
+            <label for="id">Alumni ID</label>
+            <input type="text" name="id" class="form-control" value="{!!$data->id!!}">
+          </div>
+          <div class="form-group">
+
             <label for="name">Name</label>
             <input type="hidden" name="id" value="{!!$data->id!!}">
             <input type="text" name="name" class="form-control" value="{!!$data->name!!}">

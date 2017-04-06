@@ -74,7 +74,14 @@
           </div>
           <div class="form-group">
             <label for="image">Image</label>
-            <input type="file" name="image" class="form-control" value="{!!$title->image!!}">
+            <img src="/uploads/news/{!!$title->image!!}" style="width:100%; height: 250px; float: left;  margin-right:25px; border:1px black solid; margin-bottom: 10px">
+            <br>
+            <br>
+            <br>
+            <br>
+            <input type="button"  id="loadFileXml" value="Change the Image" class="btn btn-info" onclick="document.getElementById('image').click();"  />
+
+            <input type="file" id="image" name="image" class="form-control" value="{!!$title->image!!}">
           </div>
           <div class="form-group">
             <label for="description">Short Description</label>
@@ -88,7 +95,7 @@
           </div>
           <div class="form-group">
             <input type="submit" name="send" id="send" value="Update" class="btn btn-success">
-            <a href="{{url('admin/administrative')}}" class="btn btn-danger">Back</a>
+            <a href="{{url('admin/view_news',$title->id)}}" class="btn btn-danger">Back</a>
             {!! csrf_field() !!}
 
           </div>
@@ -148,7 +155,14 @@
     })
 
   </script>
-  @include('admin.summernote.search')
+
+<script type="text/javascript">
+  $('#image').change(function() {
+   alert($(this).val()); 
+});
+</script>
+
+@include('admin.search.news')
 @endsection
 
 

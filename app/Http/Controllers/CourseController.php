@@ -21,7 +21,7 @@ class CourseController extends Controller
                     $output.='<tr>'.
                              
                              '<td>'.$depart->course.'</td>'.
-                             '<td>'.'<a href="admin/edit_course_offering/'.$depart->id.'" class="btn btn-info">Edit</a>'.
+                             '<td>'.'<a href="/admin/edit_course_offering/'.$depart->id.'" class="btn btn-info">Edit</a>&nbsp'.
                              '<a onclick="return confirm(`'.$mensahe.$depart->course.'?`)" href="admin/delete_course_offering/'.$depart->id.'" class="btn btn-danger">Delete</a>'.
 
                              '</td>'.

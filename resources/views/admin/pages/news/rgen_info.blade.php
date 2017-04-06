@@ -95,6 +95,5 @@
     </div>
   </div>
 </div>
- 
-@include('admin.summernote.search')
+ @include('admin.search.news')
 @endsection

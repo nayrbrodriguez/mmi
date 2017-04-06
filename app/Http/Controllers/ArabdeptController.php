@@ -38,20 +38,21 @@ class ArabdeptController extends Controller
 // <a href="{{url('view_arabic_department', array($gen->id))}}" >{!!$gen->title!!}</a>
 
      public function search(Request $request){
-     	if ($request->ajax()) {
-     		$output="";
-     		$department=DB::table('tb_arabdept')->where('title','LIKE','%'.$request->search.'%')->get();
-     		if ($department) {
-     			foreach ($department as $key => $depart) {
-     				$output.='<tr>'.
-     						 '<td>'.'<a href="admin/view_arabic_department/'.$depart->id.'">'.$depart->title.'</a>'.'</td>'.
-     						 '</tr>';
+        if ($request->ajax()) {
+            $output="";
+            $url="/admin/view_arabic_department/";
+            $department=DB::table('tb_arabdept')->where('title','LIKE','%'.$request->search.'%')->get();
+            if ($department) {
+                foreach ($department as $key => $depart) {
+                    $output.='<tr>'.
+                             '<td>'.'<a href="'.$url.$depart->id.'">'.$depart->title.'</a>'.'</td>'.
+                             '</tr>';
 
-     			}
-     				return Response($output);
-     		}
-     	}
-    	
+                }
+                    return Response($output);
+            }
+        }
+        
     }
 
     public function view(){

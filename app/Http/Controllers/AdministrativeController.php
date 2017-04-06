@@ -7,21 +7,22 @@ use Illuminate\Http\Request;
 use DB;
 use Image;
 use File;
-
+ 
 class AdministrativeController extends Controller
 {
     public function index(){
     	return view('admin.pages.administrative.agen_info');
     }
 
-    public function search(Request $request){
+   public function search(Request $request){
         if ($request->ajax()) {
             $output="";
+            $url="/admin/view_administrative/";
             $department=DB::table('tb_administrative')->where('name','LIKE','%'.$request->search.'%')->get();
             if ($department) {
                 foreach ($department as $key => $depart) {
                     $output.='<tr>'.
-                             '<td>'.'<a href="admin/view_administrative/'.$depart->id.'">'.$depart->name.'</a>'.'</td>'.
+                             '<td>'.'<a href="'.$url.$depart->id.'">'.$depart->name.'</a>'.'</td>'.
                              '</tr>';
 
                 }
@@ -30,7 +31,6 @@ class AdministrativeController extends Controller
         }
         
     }
-   
 
     public function insert(Request $request){
 		$this->validate($request,[

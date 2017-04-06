@@ -14,7 +14,7 @@
       <div class="panel-group">
     <div class="panel panel-default">
 <div class="pull-right">
-                  <a href="{{url('admin/add_about')}}" class="btn btn-primary ">Add About</a>
+                  <a href="{{url('admin/add_about')}}" class="btn btn-primary ">Add About Page</a>
                 </div>
       
       <div class="panel-heading">
@@ -27,7 +27,7 @@
          <table id="example1" class="table table-bordered table-striped table-hover">
                     <thead>
                       <tr>
-                        <th>About Page</th>
+                        <th>About Pages</th>
                         
                         {{-- <th width="15%"><center>Action</center></th> --}}
                       </tr>
@@ -88,6 +88,6 @@
     </div>
   </div>
 </div>
-{{-- @include('admin.summernote.search') --}}
+ @include('admin.search.about')
 
 @endsection

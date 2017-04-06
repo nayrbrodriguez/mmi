@@ -1237,6 +1237,16 @@ form#newsletter label {
   }
 }
 @media (min-width: 768px) and (max-width: 979px) {
+  .about_header{
+  margin-top: 80px; 
+  padding: 10px 0px 10px 50px; 
+  background-color: #fae806; 
+  color: #096928;
+  font-weight: bold;
+  line-height: 1.2em;
+  text-transform: uppercase;
+    font-size: 2.0rem;
+}
   .navbar-form input {
     width: 120px;
   }
@@ -1304,6 +1314,16 @@ form#newsletter label {
   }
 }
 @media (max-width: 767px) {
+  .about_header{
+  margin-top: 80px; 
+  padding: 10px 0px 10px 30px; 
+  background-color: #fae806; 
+  color: #096928;
+  font-weight: bold;
+  line-height: 1.2em;
+  text-transform: uppercase;
+    font-size: 1.5rem;
+}
   body {
     padding: 0;
     margin: 0;

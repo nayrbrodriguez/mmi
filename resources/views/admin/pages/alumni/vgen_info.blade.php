@@ -1,7 +1,7 @@
 @extends('admin.admin_template')
 
 @section('title')
-  Course Offering Content
+  Alumni List
 @endsection
 
 
@@ -35,16 +35,18 @@
                     <thead>
                       <tr>
                         {{-- <th>Title</th> --}}
-                        <th>Name</th>
-                        <th>Year Graduated</th>
-                        <th>Course</th>
-                        <th width="30%"><center>Action</center></th>
+                        <th width="10%">Alumni ID</th>
+                        <th width="30%">Name</th>
+                        <th width="10%">Year Graduated</th>
+                        <th width="10%">Course</th>
+                        <th width="10%"><center>Action</center></th>
                       </tr>
                     </thead>
                     <tbody>
           @foreach($data as $key => $gen)
                       <tr>
                         {{-- <td>{!!$gen->title!!}</td> --}}
+            <td>{!!$gen->id!!}</td>
             <td>{!!$gen->name!!}</td>
             <td>{!!$gen->year_grad!!}</td>
             <td>{!!$gen->course!!}</td>

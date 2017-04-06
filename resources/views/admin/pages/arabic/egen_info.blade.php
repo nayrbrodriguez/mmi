@@ -78,7 +78,7 @@
           </div>
           <div class="form-group">
             <input type="submit" name="send" id="send" value="Update" class="btn btn-success">
-            <a href="{{url('admin/arabic_department')}}" class="btn btn-danger">Back</a>
+            <a href="{{url('admin/view_arabic_department',$title->id)}}" class="btn btn-danger">Back</a>
             {!! csrf_field() !!}
 
           </div>
@@ -103,7 +103,7 @@
     })
 
   </script>
-  @include('admin.summernote.search')
+  @include('admin.search.arabdept')
 @endsection
 
 

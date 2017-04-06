@@ -13,7 +13,7 @@
     <div class="pull-right">
                   <a href="{{url('admin/add_about')}}" class="btn btn-primary ">Add About Page</a>
                 </div>
-      <div class="panel-heading"><h3>About Page</h3>
+      <div class="panel-heading"><h3>About</h3>
       <div class="form-group">
           <input class="form-control" type="text" id="search"  name="search" placeholder="Search"></input>
         </div>
@@ -22,7 +22,7 @@
          <table id="example1" class="table table-bordered table-striped">
                     <thead>
                       <tr>
-                        <th>About</th>
+                        <th>About Pages</th>
                         
                         {{-- <th width="15%"><center>Action</center></th> --}}
                       </tr>
@@ -77,6 +77,5 @@
     </div>
   </div>
 </div>
- 
-{{-- @include('admin.summernote.search') --}}
+ @include('admin.search.about')
 @endsection

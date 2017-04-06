@@ -13,9 +13,9 @@
       <div class="panel-group">
     <div class="panel panel-default">
     <div class="pull-right">
-                  <a href="{{url('admin/create_banner')}}" class="btn btn-primary ">Add Department</a>
+                  <a href="{{url('admin/create_banner')}}" class="btn btn-primary ">Add Banner</a>
                 </div>
-      <div class="panel-heading"><h3>Banner Title</h3>
+      <div class="panel-heading"><h3>Banner</h3>
       <div class="form-group">
           <input class="form-control" type="text" id="search"  name="search" placeholder="Search"></input>
         </div>
@@ -24,7 +24,7 @@
          <table id="example1" class="table table-bordered table-striped">
                     <thead>
                       <tr>
-                        <th>Department</th>
+                        <th>Banner Title</th>
                         
                         {{-- <th width="15%"><center>Action</center></th> --}}
                       </tr>
@@ -33,7 +33,7 @@
           @foreach($data as $key => $gen)
                       <tr>
                         {{-- <td>{!!$gen->title!!}</td> --}}
-            <td><a href="{{url('admin/view_arabic_department', array($gen->id))}}" >{!!$gen->title!!}</a></td>
+            <td><a href="{{url('admin/view_banner', array($gen->id))}}" >{!!$gen->title!!}</a></td>
             {{-- <td>
               <a href="{{url('view_course_offering', array($gen->id))}}" class="btn btn-primary">View</a>
               <a href="{{url('edit_course_offering',array($gen->id))}}" class="btn btn-info">Edit</a>
@@ -66,13 +66,21 @@
             <input type="hidden" name="id" value="{!!$title->id!!}">
             <input type="text" name="title" class="form-control" value="{!!$title->title!!}">
           </div>
-          <div class="form-group">
+          <div class="form-group" style="padding-bottom: 100px;">
             <label for="banner">Banner</label>
-            <input type="file" name="banner" class="form-control" value="{!!$title->banner!!}">
+
+            <img src="/uploads/banners/{!!$title->banner!!}" style="width:100%; height: 250px; float: left;  margin-right:25px; border:1px black solid; margin-bottom: 10px">
           </div>
+          <div class="form-group" >
+
+            <input type="button"  id="loadFileXml" value="Change the Banner" class="btn btn-info" onclick="document.getElementById('banner').click();"  />
+
+            <input type="file" id="banner" name="banner" style="display: none;" class="form-control btn btn-danger"  value="{!!$title->banner!!}">
+          </div>
+         
           <div class="form-group">
             <input type="submit" name="send" id="send" value="Update" class="btn btn-success">
-            <a href="{{url('admin/banner')}}" class="btn btn-danger">Back</a>
+            <a href="{{url('admin/view_banner',$title->id)}}" class="btn btn-danger">Back</a>
             {!! csrf_field() !!}
 
           </div>
@@ -97,7 +105,12 @@
     })
 
   </script>
-  @include('admin.summernote.search')
+   @include('admin.search.banner')
+<script type="text/javascript">
+  $('#banner').change(function() {
+   alert($(this).val()); 
+});
+</script>
 @endsection
 
 

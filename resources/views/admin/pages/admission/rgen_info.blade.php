@@ -11,9 +11,9 @@
       <div class="panel-group">
     <div class="panel panel-default">
     <div class="pull-right">
-                  <a href="{{url('admin/add_admission')}}" class="btn btn-primary ">Add Admission Page</a>
+                  <a href="{{url('admin/add_admission')}}" class="btn btn-primary ">Add Admission</a>
                 </div>
-      <div class="panel-heading"><h3>Admission Page</h3>
+      <div class="panel-heading"><h3>Admission</h3>
       <div class="form-group">
           <input class="form-control" type="text" id="search"  name="search" placeholder="Search"></input>
         </div>
@@ -22,7 +22,7 @@
          <table id="example1" class="table table-bordered table-striped">
                     <thead>
                       <tr>
-                        <th>Admissions</th>
+                        <th>Admission Page</th>
                         
                         {{-- <th width="15%"><center>Action</center></th> --}}
                       </tr>
@@ -78,5 +78,5 @@
   </div>
 </div>
  
-{{-- @include('admin.summernote.search') --}}
+  @include('admin.search.admission')
 @endsection

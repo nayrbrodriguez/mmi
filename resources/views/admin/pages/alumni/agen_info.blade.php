@@ -14,6 +14,10 @@
 			<div class="panel-body">
 				<form action="{{ url('admin/add_alumni') }}" method="post">
 					<div class="form-group">
+						<label for="id">Alumni ID</label>
+						<input type="text" name="id" class="form-control" value="{{old('id')}}">
+					</div>
+					<div class="form-group">
 						<label for="name">Name</label>
 						<input type="text" name="name" class="form-control" value="{{old('name')}}">
 					</div>

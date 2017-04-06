@@ -88,6 +88,5 @@
     </div>
   </div>
 </div>
-@include('admin.summernote.search')
-
+ @include('admin.search.scholarship')
 @endsection

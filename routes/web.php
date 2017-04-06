@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Input;
  
  
 Route::group([
@@ -25,6 +25,7 @@ Route::post('/profile', 'UserController@update');
 
 //About
 Route::post('/create_about', 'AboutController@insert');
+Route::get('/about_search', 'AboutController@search');
 Route::get('/add_about', 'AboutController@index');
 Route::get('/about', 'AboutController@view');
 Route::get('/view_about/{id}', 'AboutController@read');
@@ -34,6 +35,7 @@ Route::post('/update_about', 'AboutController@update');
 
 //News
 Route::post('/create_news', 'NewsController@insert');
+Route::get('/news_search', 'NewsController@search');
 Route::get('/add_news', 'NewsController@index');
 Route::get('/about_news', 'NewsController@view');
 Route::get('/view_news/{id}', 'NewsController@read');
@@ -44,6 +46,7 @@ Route::post('/update_news', 'NewsController@update');
 //Admission
 Route::post('/create_admission', 'AdmissionController@insert');
 Route::get('/add_admission', 'AdmissionController@index');
+Route::get('/admission_search', 'AdmissionController@search');
 Route::get('/admission', 'AdmissionController@view');
 Route::get('/view_admission/{id}', 'AdmissionController@read');
 Route::get('/delete_admission/{id}', 'AdmissionController@delete');
@@ -65,6 +68,7 @@ Route::post('/update_course_offering', 'CourseController@update');
 // Scholarships
 Route::post('/create_scholarship', 'ScholarshipController@insert');
 Route::get('/add_scholarship', 'ScholarshipController@index');
+Route::get('/scholarship_search', 'ScholarshipController@search');
 Route::get('/scholarship', 'ScholarshipController@view');
 Route::get('/view_scholarship/{id}', 'ScholarshipController@read');
 Route::get('/delete_scholarship/{id}', 'ScholarshipController@delete');
@@ -74,6 +78,7 @@ Route::post('/update_scholarship', 'ScholarshipController@update');
 //Administrative
 Route::get('/add_administrative', 'AdministrativeController@index');
 Route::post('/create_administrative', 'AdministrativeController@insert');
+Route::get('/administrative_search', 'AdministrativeController@search');
 Route::get('/administrative', 'AdministrativeController@view');
 Route::get('/view_administrative/{id}', 'AdministrativeController@read');
 Route::get('/delete_administrative/{id}', 'AdministrativeController@delete');
@@ -92,7 +97,7 @@ Route::post('/update_alumni', 'AlumniController@update');
 
 //Arabic Dept
 Route::post('/create_arabic_department', 'ArabdeptController@insert');
-Route::get('/search', 'ArabdeptController@search');
+Route::get('/arabdept_search', 'ArabdeptController@search');
 Route::get('/add_arabic_department', 'ArabdeptController@index');
 Route::get('/arabic_department', 'ArabdeptController@view');
 Route::get('/view_arabic_department/{id}', 'ArabdeptController@read');
@@ -127,5 +132,11 @@ Route::get('/arabic_department/{id}', 'WebController@arabic_department_view');
 Route::get('/contact_us', 'WebController@contact_us');
 Route::get('/blank', 'WebController@blank');
 
-
+Route::any('/search_alumni',function(){
+    $q = Input::get ( 'q' );
+    $data = DB::table('tb_alumni')->where('name','LIKE','%'.$q.'%')->orWhere('id','LIKE','%'.$q.'%')->get();
+    if(count($data) > 0)
+    return view('user.pages.alumni.alumni')->withDetails($data)->withQuery ( $q );
+    else return view ('user.pages.alumni.alumni')->withMessage('No Details found. Try to search again !');
+	});
 

@@ -37,21 +37,22 @@ class ScholarshipController extends Controller
     }
 // <a href="{{url('view_scholarship', array($gen->id))}}" >{!!$gen->title!!}</a>
 
-     public function search(Request $request){
-     	if ($request->ajax()) {
-     		$output="";
-     		$department=DB::table('tb_scholarship')->where('title','LIKE','%'.$request->search.'%')->get();
-     		if ($department) {
-     			foreach ($department as $key => $depart) {
-     				$output.='<tr>'.
-     						 '<td>'.'<a href="admin/view_scholarship/'.$depart->id.'">'.$depart->title.'</a>'.'</td>'.
-     						 '</tr>';
+      public function search(Request $request){
+        if ($request->ajax()) {
+            $output="";
+            $url="/admin/view_scholarship/";
+            $department=DB::table('tb_scholarship')->where('title','LIKE','%'.$request->search.'%')->get();
+            if ($department) {
+                foreach ($department as $key => $depart) {
+                    $output.='<tr>'.
+                             '<td>'.'<a href="'.$url.$depart->id.'">'.$depart->title.'</a>'.'</td>'.
+                             '</tr>';
 
-     			}
-     				return Response($output);
-     		}
-     	}
-    	
+                }
+                    return Response($output);
+            }
+        }
+        
     }
 
     public function view(){

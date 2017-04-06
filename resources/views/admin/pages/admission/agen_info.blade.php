@@ -15,7 +15,7 @@
 			<div class="panel-body">
 				<form action="{{ url('admin/create_admission') }}" method="post">
 					<div class="form-group">
-						<label for="title">Department</label>
+						<label for="title">Title</label>
 						<input type="text" name="title" class="form-control" value="{{old('title')}}">
 					</div>
 					<div class="form-group">

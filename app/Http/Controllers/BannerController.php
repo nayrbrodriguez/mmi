@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use DB;
 use Image;
 use File;
-
+ 
 class BannerController extends Controller
 {
     public function index(){
@@ -17,11 +17,12 @@ class BannerController extends Controller
     public function search(Request $request){
         if ($request->ajax()) {
             $output="";
+            $url="/admin/view_banner/";
             $department=DB::table('tb_banner')->where('title','LIKE','%'.$request->search.'%')->get();
             if ($department) {
                 foreach ($department as $key => $depart) {
                     $output.='<tr>'.
-                             '<td>'.'<a href="admin/view_banner/'.$depart->id.'">'.$depart->title.'</a>'.'</td>'.
+                             '<td>'.'<a href="'.$url.$depart->id.'">'.$depart->title.'</a>'.'</td>'.
                              '</tr>';
 
                 }

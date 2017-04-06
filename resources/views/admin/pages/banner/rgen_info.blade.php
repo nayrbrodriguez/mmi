@@ -13,7 +13,7 @@
     <div class="pull-right">
                   <a href="{{url('admin/create_banner')}}" class="btn btn-primary ">Add Banner</a>
                 </div>
-      <div class="panel-heading"><h3>Banner Content</h3>
+      <div class="panel-heading"><h3>Banner</h3>
       <div class="form-group">
           <input class="form-control" type="text" id="search"  name="search" placeholder="Search"></input>
         </div>
@@ -22,7 +22,7 @@
          <table id="example1" class="table table-bordered table-striped">
                     <thead>
                       <tr>
-                        <th>Banner</th>
+                        <th>Banner Title</th>
                         
                         {{-- <th width="15%"><center>Action</center></th> --}}
                       </tr>
@@ -78,17 +78,5 @@
     </div>
   </div>
 </div>
- <script type="text/javascript">
-  $('#search').on('keyup',function() {
-    $value=$(this).val();
-    $.ajax({
-      type: 'get',
-      url :'{{URL::to('admin/banner_search')}}',
-      data :{'search':$value},
-      success:function(data){
-        $('tbody').html(data);
-      }
-    });
-  })
-</script>
+ @include('admin.search.banner')
 @endsection

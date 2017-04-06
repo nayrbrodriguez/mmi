@@ -40,11 +40,17 @@
                                       <li class="{{ Request::is('course_offering','course_offering/*') ? "active" : ""}}"><a href="{{ url('/course_offering')}}">Course Offering</a></li>
                                       <li class="{{ Request::is('scholarships','scholarships/*') ? "active" : ""}}"><a href="{{ url('/scholarships')}}">Scholarships</a></li>
                                       <li class="{{ Request::is('administrative') ? "active" : ""}}"><a href="{{ url('/administrative')}}">Administrative</a></li>
-                                      <li class="{{ Request::is('alumni','alumni/*') ? "active" : ""}}"><a href="{{ url('/alumni')}}">Alumni</a></li>
+                                      <li class="{{ Request::is('alumni','alumni/*','search_alumni') ? "active" : ""}}"><a href="{{ url('/alumni')}}">Alumni</a></li>
                                       <li class="{{ Request::is('arabic_department','arabic_department/*') ? "active" : ""}}"><a href="{{ url('arabic_department')}}">Arabic Department</a>
                                       
                                       </li>
                                       <li class="{{ Request::is('contact_us','contact_us/*') ? "active" : ""}}"><a href="{{ url('/contact_us')}}">Contact Us</a></li>
+
+                                      <li class="treeview">
+                                        <ul class="">
+                                          Settings
+                                        </ul>
+                                      </li>
 
                                     </ul>
                                 </div>

@@ -35,14 +35,15 @@ class AdmissionController extends Controller
     }
 // <a href="{{url('view_about', array($gen->id))}}" >{!!$gen->title!!}</a>
 
-     public function search(Request $request){
+      public function search(Request $request){
         if ($request->ajax()) {
             $output="";
+            $url="/admin/view_admission/";
             $department=DB::table('tb_admission')->where('title','LIKE','%'.$request->search.'%')->get();
             if ($department) {
                 foreach ($department as $key => $depart) {
                     $output.='<tr>'.
-                             '<td>'.'<a href="admin/view_admission/'.$depart->id.'">'.$depart->title.'</a>'.'</td>'.
+                             '<td>'.'<a href="'.$url.$depart->id.'">'.$depart->title.'</a>'.'</td>'.
                              '</tr>';
 
                 }
@@ -51,6 +52,7 @@ class AdmissionController extends Controller
         }
         
     }
+   
 
     public function view(){
         $data = DB::table('tb_admission')->paginate(10);
