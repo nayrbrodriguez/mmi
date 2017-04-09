@@ -32,7 +32,11 @@
                         <!-- The user image in the menu -->
                         <li class="user-header">
                             {{-- <img src="{{ asset("/bower_components/adminlte/dist/img/user2-160x160.jpg") }}" class="img-circle" alt="User Image" /> --}}
-                            <img src="/uploads/avatars/{{ Auth::user()->avatar }}" class="img-circle" alt="User Image"/>
+
+                           
+                                <img src="/uploads/avatars/{{ Auth::user()->avatar }}" style="width: 90px; height: 90px;" class="img-circle" alt="User Image"/>
+                            
+
                             <p>
                                 {{ Auth::user()->name }} - MMI Administrator
                                 
@@ -45,6 +49,7 @@
                             <div class="pull-left">
                                 {{-- <a href="#" class="btn btn-default btn-flat">Profile</a> --}}
                                  <a href="{{ url('/admin/profile')}}" class="btn btn-default btn-flat">Profile</a>
+                                 {{-- <a href="{{ url('admin/reset', Auth::user()->id)}}" class="btn btn-default btn-flat">Profile</a> --}}
                             </div>
                             <div class="pull-right">
                                 

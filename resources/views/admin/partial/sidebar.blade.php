@@ -54,6 +54,20 @@
             <li class="{{ Request::is('admin/arabic_department', 'admin/add_arabic_department','admin/update_arabic_department','admin/view_arabic_department/*','admin/edit_arabic_department/*') ? "active" : "" }}">
                 <a href="{{url('admin/arabic_department')}}"><i class="fa fa-id-card"></i> <span>Arabic Department</span></a>
             </li>
+           
+          {{--  <li class="treeview">
+              <a href="#">
+                <i class="fa fa-files-o"></i>
+                <span>Settings</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="layout/top-nav.html"><i class="fa fa-circle-o"></i> Logo</a></li>
+                <li><a href="layout/boxed.html"><i class="fa fa-circle-o"></i> Users</a></li>
+                <li><a href="layout/fixed.html"><i class="fa fa-circle-o"></i> Informations</a></li>
+              </ul>
+            </li> --}}
+            
             
           
           </ul><!-- /.sidebar-menu -->

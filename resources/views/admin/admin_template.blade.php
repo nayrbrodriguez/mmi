@@ -33,7 +33,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script> 
   <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
   <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
-    
+     @yield('css')
 </head>
 <body class="skin-green">
 <div class="wrapper">

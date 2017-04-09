@@ -15,7 +15,7 @@
     <div class="row">
       <div class="span12">
       <br>
-      <form action="/search_alumni" method="POST" role="search" >
+      <form action="{{ url('/search_alumni') }}" method="POST" role="search" >
         {{ csrf_field() }}
         <div class="input-group">
             <input type="text" class="form-control span8" name="q"
@@ -32,16 +32,18 @@
     <table class="table table-bordered table-hover">
         <thead>
             <tr>
-                <th><font size="5px">Alumni ID</font></th>
                 <th><font size="5px">Name</font></th>
+                <th><font size="5px">Alumni ID</font></th>
+                <th><font size="5px">Course</font></th>
                 <th><font size="5px">Year Graduated</font></th>
             </tr>
         </thead>
         <tbody>
             @foreach($details as $data)
             <tr>
-                <td><h4>{{$data->id}}</h4></td>
                 <td><h4>{{$data->name}}</h4></td>
+                <td><h4>{{$data->id}}</h4></td>
+                <td><h4>{{$data->id}}</h4></td>
                 <td><h4>{{$data->year_grad}}</h4></td>
             </tr>
             @endforeach

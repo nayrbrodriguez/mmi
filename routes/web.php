@@ -2,10 +2,75 @@
 use Illuminate\Support\Facades\Input;
  
  
+
+
+Auth::routes();
+
+//Users page - Homepage
+Route::get('/', 'WebController@home');
+
+//User Page - About Page
+Route::get('/about', 'WebController@about');
+Route::get('/about/{id}', 'WebController@about_read');
+
+//User Page - News
+Route::get('/news', 'WebController@news');
+Route::get('/news/{id}', 'WebController@news_read');
+
+// User Page - Admission
+Route::get('/admission', 'WebController@admission');
+Route::get('/admission/{id}', 'WebController@admission_read');
+
+// User Page - Course Offering
+Route::get('/course_offering', 'WebController@course_offering');
+
+// User Page - Scholarships
+Route::get('/scholarships', 'WebController@scholarship');
+Route::get('/scholarships/{id}', 'WebController@scholarship_read');
+
+// User Page - Administrative 
+Route::get('/administrative', 'WebController@administrative');
+
+// User Page - Arabic Department 
+Route::get('/arabic_department', 'WebController@arabic_department');
+Route::get('/arabic_department/{id}', 'WebController@arabic_department_view');
+
+// User Page - Contact Us
+Route::get('/contact_us', 'WebController@contact_us');
+
+// Blank Page
+Route::get('/blank', 'WebController@blank');
+
+
+// User Page - Alumni 
+Route::get('/alumni', 'WebController@alumni');
+
+// Alumni Search Page
+Route::any('/search_alumni',function(){
+    $q = Input::get ( 'q' );
+    $data = DB::table('tb_alumni')->where('name','LIKE','%'.$q.'%')->orWhere('id','LIKE','%'.$q.'%')->get();
+    if(count($data) > 0)
+    return view('user.pages.alumni.alumni')->withDetails($data)->withQuery ( $q );
+    else return view ('user.pages.alumni.alumni')->withMessage('No Details found. Try to search again !');
+	});
+
+ 
 Route::group([
 	'middleware' => 'auth',
 	'prefix' => 'admin'
 	], function () {
+
+// Change Avatar
+Route::get('/profile', 'UserController@index');
+Route::post('/profile', 'UserController@update');
+
+//register
+Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+Route::post('/register', 'Auth\RegisterController@register');
+
+//edit password
+Route::get('/reset/{id}', 'UserController@edit');
+Route::post('/reset', 'UserController@updatePass');
 
 //Banner
 Route::get('/create_banner', 'BannerController@index');
@@ -17,11 +82,9 @@ Route::get('/delete_banner/{id}', 'BannerController@delete');
 Route::get('/edit_banner/{id}', 'BannerController@edit');
 Route::post('/update_banner', 'BannerController@update');
 
-// Route::get('/', 'GeneralController@backup');
-Route::get('/backup', 'GeneralController@backup');
-Route::get('/', 'BannerController@view');
-Route::get('/profile', 'UserController@index');
-Route::post('/profile', 'UserController@update');
+// Route::get('/backup', 'GeneralController@backup');
+// Route::get('/', 'BannerController@view');
+
 
 //About
 Route::post('/create_about', 'AboutController@insert');
@@ -55,7 +118,6 @@ Route::post('/update_admission', 'AdmissionController@update');
 
 
 //Course Offering
-// Route::resource('queries', 'QueryController@search');
 Route::post('/create_course_offering', 'CourseController@insert');
 Route::get('/add_course_offering', 'CourseController@index');
 Route::get('/course_search', 'CourseController@search');
@@ -104,39 +166,6 @@ Route::get('/view_arabic_department/{id}', 'ArabdeptController@read');
 Route::get('/delete_arabic_department/{id}', 'ArabdeptController@delete');
 Route::get('/edit_arabic_department/{id}', 'ArabdeptController@edit');
 Route::post('/update_arabic_department', 'ArabdeptController@update');
-
+	
 
 });
-Auth::routes();
-
-Route::get('/admin', 'HomeController@index');
-
-//Users page
-Route::get('/', 'WebController@home');
-Route::get('/about', 'WebController@about');
-Route::get('/about/{id}', 'WebController@about_read');
-Route::get('/news', 'WebController@news');
-Route::get('/news/{id}', 'WebController@news_read');
-Route::get('/admission', 'WebController@admission');
-Route::get('/admission/{id}', 'WebController@admission_read');
-Route::get('/course_offering', 'WebController@course_offering');
-
-Route::get('/scholarships', 'WebController@scholarship');
-Route::get('/scholarships/{id}', 'WebController@scholarship_read');
-Route::get('/administrative', 'WebController@administrative');
-
-Route::get('/alumni', 'WebController@alumni');
-
-Route::get('/arabic_department', 'WebController@arabic_department');
-Route::get('/arabic_department/{id}', 'WebController@arabic_department_view');
-Route::get('/contact_us', 'WebController@contact_us');
-Route::get('/blank', 'WebController@blank');
-
-Route::any('/search_alumni',function(){
-    $q = Input::get ( 'q' );
-    $data = DB::table('tb_alumni')->where('name','LIKE','%'.$q.'%')->orWhere('id','LIKE','%'.$q.'%')->get();
-    if(count($data) > 0)
-    return view('user.pages.alumni.alumni')->withDetails($data)->withQuery ( $q );
-    else return view ('user.pages.alumni.alumni')->withMessage('No Details found. Try to search again !');
-	});
-

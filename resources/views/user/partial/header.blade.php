@@ -46,11 +46,7 @@
                                       </li>
                                       <li class="{{ Request::is('contact_us','contact_us/*') ? "active" : ""}}"><a href="{{ url('/contact_us')}}">Contact Us</a></li>
 
-                                      <li class="treeview">
-                                        <ul class="">
-                                          Settings
-                                        </ul>
-                                      </li>
+                                      
 
                                     </ul>
                                 </div>

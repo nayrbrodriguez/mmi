@@ -9,7 +9,7 @@ MMI Homepage
     <div class="camera_wrap">
     {{-- @foreach ($banner as $key => $image) --}}
     @foreach($data as $key => $gen)
-        <div data-src="/uploads/banners/{!!$gen->banner!!}"></div>
+        <div data-src="{{ url('/uploads/banners/', $gen->banner)}}"></div>
     @endforeach
         
     </div>
@@ -31,8 +31,8 @@ MMI Homepage
                     <h4 class="indent-2">News and Events</h4>
                 @foreach($news as $new=>$news)
                 <div class="news_span">
-                    <figure class="img-indent"><img src="/uploads/news/{{ $news->image }}" height="1000px" alt="" class="img-radius" ></figure>
-                    <p class="news_lead">{{ $news->title }}</p>
+                    <figure class="img-indent"><a href="{{ url('news',$news->id) }}"><img src="/uploads/news/{{ $news->image }}" height="1000px" alt="" class="img-radius" ></a></figure>
+                    <a href="{{ url('news',$news->id) }}"><p class="news_lead">{{ $news->title }}</p></a>
                     Description
                 </div>
                 @endforeach
@@ -100,24 +100,7 @@ MMI Homepage
         </ul>
         </div>    
         <div class="span4">
-        	{{-- <h4 class="indent-2">Latest News</h4> --}}
-            {{-- <ul class="list-news">
-            	<li>
-                	<a href="#" class="btn btn_">Apr 21, 2012</a>
-                    <p class="text-info">Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta.</p>
-                    Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. <a href="#" class="underline">>></a>
-                </li>
-                <li>
-                	<a href="#" class="btn btn_">Apr 21, 2012</a>
-                    <p class="text-info">Aenean nonummy hendrerit mauris</p>
-                    Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes.  <a href="#" class="underline">>></a>
-                </li>
-                <li>
-                	<a href="#" class="btn btn_">Apr 21, 2012</a>
-                    <p class="text-info">Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturien.</p>
-                    Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes.  <a href="#" class="underline">>></a>
-                </li>
-            </ul> --}}
+        	
             <h4 class="indent-1">Facebook</h4>
             <div id="search-results"></div>
             <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FMMI.Tatayawan.tamparan.LDS%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
