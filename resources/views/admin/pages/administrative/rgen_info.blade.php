@@ -67,7 +67,7 @@
       <div class="panel-heading"></div>
       <div class="panel-body">
       
-      <img src="/uploads/image/{{ $title->image }}" style="width:150px; height: 150px; float: left;  margin-right:25px; border:1px black solid;">
+      <img src="{{ url('/uploads/image', $title->image) }}" style="width:150px; height: 150px; float: left;  margin-right:25px; border:1px black solid;">
       <table class="table table-striped">
   
       <tr>

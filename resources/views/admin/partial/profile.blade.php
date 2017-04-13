@@ -57,7 +57,7 @@
             <div class="box-body">
              
               <div class="imageWrapper">
-                <img src="/uploads/avatars/{{ $user->avatar }}" style="">
+                <img src="{{ url('/uploads/avatars', $user->avatar) }}" style="">
                 <button class="cornerLink" data-toggle="modal" data-target="#myModal">Change Photo</button>
               </div>
               
@@ -86,7 +86,7 @@
         <div class="modal-body">
           <form enctype="multipart/form-data" action="{{ url('admin/profile') }}" method="POST">
             <div class="imageWrapper">
-              <img src="/uploads/avatars/{{ $user->avatar }}" style="">
+              <img src="{{ url('/uploads/avatars', $user->avatar) }}" style="">
 
               {{-- <a href="http://google.com" class="cornerLink">Link</a>  --}}
                 <input type="button"  id="loadFileXml" value="Change the Banner" class="cornerLink" onclick="document.getElementById('profile').click();"  />               

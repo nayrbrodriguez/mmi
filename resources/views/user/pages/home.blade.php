@@ -9,7 +9,7 @@ MMI Homepage
     <div class="camera_wrap">
     {{-- @foreach ($banner as $key => $image) --}}
     @foreach($data as $key => $gen)
-        <div data-src="{{ url('/uploads/banners/', $gen->banner)}}"></div>
+        <div data-src="{{ url('/uploads/banners', $gen->banner)}}"></div>
     @endforeach
         
     </div>
@@ -31,9 +31,9 @@ MMI Homepage
                     <h4 class="indent-2">News and Events</h4>
                 @foreach($news as $new=>$news)
                 <div class="news_span">
-                    <figure class="img-indent"><a href="{{ url('news',$news->id) }}"><img src="/uploads/news/{{ $news->image }}" height="1000px" alt="" class="img-radius" ></a></figure>
+                    <figure class="img-indent"><a href="{{ url('news',$news->id) }}"><img src="{{ url('/uploads/news', $news->image) }}" height="1000px" alt="" class="img-radius" ></a></figure>
                     <a href="{{ url('news',$news->id) }}"><p class="news_lead">{{ $news->title }}</p></a>
-                    Description
+                    {{ $news->description}}
                 </div>
                 @endforeach
                 
@@ -41,7 +41,7 @@ MMI Homepage
             <hr>
             <div class="lists">
                 <div class="span4 left-0">
-                  <h4 class="indent-1">Scholarships</h4>
+                  <h4>Scholarships</h4>
                       <ul class="list ">
                         @foreach($scholar as $scholarships=>$s)
                           <li><a href="{{ url('scholarships',array($s->id)) }}">{{$s->title}}</a></li>

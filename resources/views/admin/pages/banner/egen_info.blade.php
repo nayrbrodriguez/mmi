@@ -69,7 +69,7 @@
           <div class="form-group" style="padding-bottom: 100px;">
             <label for="banner">Banner</label>
 
-            <img src="/uploads/banners/{!!$title->banner!!}" style="width:100%; height: 250px; float: left;  margin-right:25px; border:1px black solid; margin-bottom: 10px">
+            <img src="{{ url('/uploads/banners', $title->banner)}}" style="width:100%; height: 250px; float: left;  margin-right:25px; border:1px black solid; margin-bottom: 10px">
           </div>
           <div class="form-group" >
 

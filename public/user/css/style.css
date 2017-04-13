@@ -1362,7 +1362,7 @@ form#newsletter label {
   .navbar_ .btn {
     display: inline-block;
     float: left;
-    background: #ffffff;
+    background: #fae806;
     padding: 12px 20px 12px 20px;
     font-family: "Open Sans", sans-serif;
     text-decoration: none;
@@ -1373,7 +1373,7 @@ form#newsletter label {
     border: none;
   }
   .navbar_ .btn:hover {
-    background-color: #cf3046;
+    background-color: #00ff24;
     color: #ffffff;
   }
   .nav-collapse_ .nav {
@@ -1395,7 +1395,7 @@ form#newsletter label {
   .nav-collapse_ .nav li a {
     font-size: 11px;
     line-height: 15px;
-    color: #ffffff;
+    color: #fae806;
     font-weight: normal;
     text-shadow: none;
     text-transform: uppercase;
@@ -1421,8 +1421,8 @@ form#newsletter label {
   .nav-collapse_ .nav > li > a:hover,
   .nav-collapse_ .nav > li.active > a,
   .nav-collapse_ .nav > li.active > a:hover {
-    background: #fff;
-    color: #000;
+    background: #096928;
+    color: #fae806;
   }
   .sub-menu > a {
     position: relative;

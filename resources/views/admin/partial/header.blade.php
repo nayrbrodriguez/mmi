@@ -24,7 +24,7 @@
                         {{-- <div style="padding-top: 15px; padding-right: 15px; color:  white; "> --}}
                         {{-- </div> --}}
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="/uploads/avatars/{{ Auth::user()->avatar }}" class="user-image" alt="User Image"/>
+              <img src="{{ url('/uploads/avatars', Auth::user()->avatar) }}" class="user-image" alt="User Image"/>
               <span class="hidden-xs">{{ Auth::user()->name }}</span>
             </a>
                        
@@ -34,7 +34,7 @@
                             {{-- <img src="{{ asset("/bower_components/adminlte/dist/img/user2-160x160.jpg") }}" class="img-circle" alt="User Image" /> --}}
 
                            
-                                <img src="/uploads/avatars/{{ Auth::user()->avatar }}" style="width: 90px; height: 90px;" class="img-circle" alt="User Image"/>
+                                <img src="{{ url('/uploads/avatars', Auth::user()->avatar) }}" style="width: 90px; height: 90px;" class="img-circle" alt="User Image"/>
                             
 
                             <p>

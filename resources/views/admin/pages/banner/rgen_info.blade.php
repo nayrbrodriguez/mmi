@@ -67,7 +67,7 @@
       <div class="panel-body">
       <h3>{!!$title->title or "Banner" !!}</h3> 
       <hr>
-      <img src="/uploads/banners/{{ $title->banner }}" style="width:100%; height: 250px; float: left;  margin-right:25px; border:1px black solid;">
+      <img src="{{ url('/uploads/banners', $title->banner) }}" style="width:100%; height: 250px; float: left;  margin-right:25px; border:1px black solid;">
       {{-- {!!$title->banner or "No Banner Available"!!} --}}
       </div>
     </div>

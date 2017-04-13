@@ -74,7 +74,7 @@
           </div>
           <div class="form-group">
             <label for="image">Image</label>
-            <img src="/uploads/news/{!!$title->image!!}" style="width:100%; height: 250px; float: left;  margin-right:25px; border:1px black solid; margin-bottom: 10px">
+            <img src="{{ url('/uploads/news',$title->image)}}" style="width:100%; height: 250px; float: left;  margin-right:25px; border:1px black solid; margin-bottom: 10px">
             <br>
             <br>
             <br>
