@@ -2,7 +2,9 @@
 use Illuminate\Support\Facades\Input;
  
  
-
+Route::get('error', function(){
+	abort(404);
+});
 
 Auth::routes();
 
