@@ -10,6 +10,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.2 -->
     <link href="{{ asset("../bower_components/adminlte/bootstrap/css/bootstrap.min.css") }}" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="{{ asset('favicon.png') }}" >
     <!-- Font Awesome Icons -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <!-- Ionicons -->
@@ -39,7 +40,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <div class="wrapper">
 
     <!-- Header -->
-    @include('admin.partial.header')
+    {{-- @include('admin.partial.header') --}}
 
     <!-- Sidebar -->
     @include('admin.partial.sidebar')

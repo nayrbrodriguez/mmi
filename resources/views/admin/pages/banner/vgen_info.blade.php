@@ -9,9 +9,9 @@
 @section('content')
 
 
-<div class="row">
+<div class="row ">
     <div class="col-md-6">
-      <div class="panel-group">
+      <div class="panel-group ">
     <div class="panel panel-default">
 <div class="pull-right">
                   <a href="{{url('admin/create_banner')}}" class="btn btn-primary ">Add Banner</a>

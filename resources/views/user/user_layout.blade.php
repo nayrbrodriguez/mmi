@@ -8,7 +8,7 @@
     <meta name="keywords" content="Your keywords">
     <meta name="author" content="Your name"> --}}
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="{{ asset("favicon.png") }}" type="image/x-icon" />
     <link rel="stylesheet" href="{{ asset("../user/css/bootstrap.css")}}" type="text/css" media="screen">
     <link rel="stylesheet" href="{{ asset("../user/css/responsive.css")}}" type="text/css" media="screen">
     <link rel="stylesheet" href="{{ asset("../user/css/camera.css")}}" type="text/css" media="screen"> 

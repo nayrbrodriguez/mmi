@@ -54,6 +54,7 @@ Route::any('/search_alumni',function(){
     else return view ('user.pages.alumni.alumni')->withMessage('No Details found. Try to search again !');
 	});
 
+Route::get('/dashboard', 'TestController@index');
  
 Route::group([
 	'middleware' => 'auth',
