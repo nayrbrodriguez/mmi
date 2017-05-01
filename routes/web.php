@@ -51,8 +51,15 @@ Route::get('/alumni', 'WebController@alumni');
 Route::any('/search_alumni',function(){
     $q = Input::get ( 'q' );
     $data = DB::table('tb_alumni')->where('name','LIKE','%'.$q.'%')->orWhere('id','LIKE','%'.$q.'%')->get();
-    if(count($data) > 0)
+    if($q != "")
     return view('user.pages.alumni.alumni')->withDetails($data)->withQuery ( $q );
+	
+	if($q == "")
+    return view('user.pages.alumni.alumni')->withMessage('Please enter Alumni ID or Name First');
+	
+	// if($q == "")
+	// return view('user.pages.alumni.alumni')->withMessage('No Details found. Try to search again !');
+
     else return view ('user.pages.alumni.alumni')->withMessage('No Details found. Try to search again !');
 	});
 
@@ -169,6 +176,16 @@ Route::get('/view_arabic_department/{id}', 'ArabdeptController@read');
 Route::get('/delete_arabic_department/{id}', 'ArabdeptController@delete');
 Route::get('/edit_arabic_department/{id}', 'ArabdeptController@edit');
 Route::post('/update_arabic_department', 'ArabdeptController@update');
+	
+//Contact
+// Route::get('/create_contact', 'ContactUs@index');
+Route::get('/contact_search', 'ContactUs@search');
+// Route::post('/add_contact', 'ContactUs@insert');
+Route::get('/contact', 'ContactUs@view');
+Route::get('/view_contact/{id}', 'ContactUs@read');
+Route::get('/delete_contact/{id}', 'ContactUs@delete');
+Route::get('/edit_contact/{id}', 'ContactUs@edit');
+Route::post('/update_contact', 'ContactUs@update');
 	
 
 });

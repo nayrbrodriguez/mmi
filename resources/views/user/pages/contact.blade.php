@@ -15,13 +15,28 @@
       <div class="span4">
           <h4>Contact info</h4>
                 <strong class="clr">MA'HAD MARANAO AL-ISLAMIE<br>
-Tatayawan, Tamparan, Lanao Del Sur, Philippines<br>
-Lanao Del Sur, Philippines</strong><br>
-                <span>Freephone:</span>+1 800 559 6580<br>
-                <span>Telephone:</span>+1 800 603 6035<br>
-                <span>FAX:</span>+1 800 889 9898 <br>
-                E-mail: <a href="#"><u>mail@demolink.org</u></a>
-          
+                @foreach($data as $gen)
+                @if($gen->type == 'Address')<span>{{ $gen->description }}</span>
+                </strong><br>
+                @endif
+
+                @if($gen->type == 'Tel')
+                <span>Telephone:</span>
+                {{ $gen->description }}
+                <br>
+                @endif
+
+                @if($gen->type == 'Fax')
+                <span>FAX:</span>
+                {{ $gen->description }}
+                <br>
+                @endif
+
+                @if($gen->type == 'Email')
+                E-mail: <a href="#">
+                <u>{{ $gen->description }}</u></a><br>
+                @endif
+                @endforeach
 		</div>  
         <div class="span6">
         	   <h4></h4>

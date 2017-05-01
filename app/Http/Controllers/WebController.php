@@ -95,9 +95,9 @@ class WebController extends Controller
     }
 
     public function contact_us(){
-    	// $data = DB::table('tb_contact')->paginate(10);
-        // return view('user.pages.contact', compact('data'));
-    	return view('user.pages.contact');
+    	$data = DB::table('tb_contact')->get();
+        return view('user.pages.contact', compact('data'));
+    	// return view('user.pages.contact');
     }
 
     public function blank(){

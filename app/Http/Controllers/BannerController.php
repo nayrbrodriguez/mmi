@@ -45,6 +45,7 @@ class BannerController extends Controller
     			$filename = time().'.'.$photo->getClientOriginalExtension();
 
     			
+                // Image::make($photo)->resize(1674, 550)->save('/public/uploads/banners/' . $filename);
  				Image::make($photo)->resize(1674, 550)->save(public_path('uploads/banners/' . $filename));
     			DB::table('tb_banner')->insert([
     				'title'=>$request['title'],

@@ -54,6 +54,11 @@
             <li class="{{ Request::is('admin/arabic_department', 'admin/add_arabic_department','admin/update_arabic_department','admin/view_arabic_department/*','admin/edit_arabic_department/*') ? "active" : "" }}">
                 <a href="{{url('admin/arabic_department')}}"><i class="fa fa-id-card"></i> <span>Arabic Department</span></a>
             </li>
+
+            {{-- Contact Us --}}
+            <li class="{{ Request::is('admin/contact', 'admin/add_contact','admin/update_contact','admin/edit_contact/*') ? "active" : "" }}">
+                <a href="{{url('admin/contact')}}"><i class="fa fa-id-card"></i> <span>Contact Us</span></a>
+            </li>
            
           {{--  <li class="treeview">
               <a href="#">

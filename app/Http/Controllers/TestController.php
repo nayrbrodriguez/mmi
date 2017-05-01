@@ -21,43 +21,71 @@ class TestController extends Controller {
         $data['tasks'] = [
                 [
                         'name' => 'Banner Photos',
-                        'progress' => $banner
+                        'progress' => $banner,
+                        'color' => 'red',
+                        'url' => 'admin/banner'
                 ],
                 [
                         'name' => 'About Contents',
-                        'progress' => $about
+                        'progress' => $about,
+                        'color' => 'aqua',
+                        'url' => 'admin/about'
+
                 ],
                 [
                         'name' => 'News and Events',
-                        'progress' => $news
+                        'progress' => $news,
+                        'color' => 'yellow',
+                        'url' => 'admin/about_news'
+
                 ],
                 [
                         'name' => 'Admission Contents',
-                        'progress' => $admission
+                        'progress' => $admission,
+                        'color' => 'blue',
+                        'url' => 'admin/admission'
+
                 ],
                 [
                         'name' => 'Courses',
-                        'progress' => $course
+                        'progress' => $course,
+                        'color' => 'gray',
+                        'url' => 'admin/course_offering'
+
                 ],
                 [
                         'name' => 'Scholarships',
-                        'progress' => $scholarship
+                        'progress' => $scholarship,
+                        'color' => 'green',
+                        'url' => 'admin/scholarship'
+
                 ],
                 [
                         'name' => 'Administrative',
-                        'progress' => $administrative
+                        'progress' => $administrative,
+                        'color' => 'maroon',
+                        'url' => 'admin/administrative'
+
                 ],
                 [
                         'name' => 'Alumni',
-                        'progress' => $alumni
+                        'progress' => $alumni,
+                        'color' => 'teal',
+                        'url' => 'admin/alumni'
+
                 ],
                 [
                         'name' => 'Arabic Department',
-                        'progress' => $arabdept
+                        'progress' => $arabdept,
+                        'color' => 'purple',
+                        'url' => 'admin/arabic_department'
+
                 ]
 
         ];
         return view('admin.test')->with($data);
     }
+
+
 
 }

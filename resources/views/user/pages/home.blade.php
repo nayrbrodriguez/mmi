@@ -4,17 +4,28 @@
 MMI Homepage
 @endsection
 
-@section('slider')
+@section('')
  <div class="slider">
     <div class="camera_wrap">
     {{-- @foreach ($banner as $key => $image) --}}
     @foreach($data as $key => $gen)
+
         <div data-src="{{ url('/uploads/banners', $gen->banner)}}"></div>
     @endforeach
         
     </div>
 </div>
 @endsection
+
+@section('slider')
+ <div class="camera_wrap">
+    <div data-src="{{ url('/uploads/banners', $gen->banner)}}"></div>
+    <div data-src="{{ url('/uploads/banners', $gen->banner)}}"></div>
+   
+</div>
+@endsection
+
+
 @section('content')
  
 <section id="content" class="main-content">
