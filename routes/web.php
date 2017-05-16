@@ -64,6 +64,7 @@ Route::any('/search_alumni',function(){
 	});
 
 Route::get('/dashboard', 'TestController@index');
+Route::get('/developer', 'DevController@index');
  
 Route::group([
 	'middleware' => 'auth',
