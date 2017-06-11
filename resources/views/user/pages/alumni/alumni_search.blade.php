@@ -18,9 +18,9 @@
       <form action="{{ url('/search_alumni') }}" method="POST" role="search" >
         {{ csrf_field() }}
         <div class="input-group">
-            <input type="text" class="form-control span4" name="q"
-                placeholder="Enter Alumni ID or Name" id="test"> </input>
-                <button type="submit" class="btn btn-success">
+            <input type="text" class="form-control span8" name="q"
+                placeholder="Enter Alumni ID or Name" id="test"> 
+                <button type="submit" class="btn btn-info">
                    Search
                 </button>
             
@@ -30,7 +30,7 @@
 
     
 
-    @if(isset($details))
+   {{--  @if(isset($details))
         <p> The Search results for your query <b> {{ $query }} </b> are :</p>
     <table class="table table-bordered table-hover">
         <thead>
@@ -44,7 +44,7 @@
         <tbody>
             @foreach($details as $data)
             <tr>
-                <td><font size="3px">{{$data->name or "No Details"}}</font></td>
+                <td><font size="3px">{{$data->name}}</font></td>
                 <td><font size="3px">{{$data->id}}</font></td>
                 <td><font size="3px">{{$data->id}}</font></td>
                 <td><font size="3px">{{$data->year_grad}}</font></td>
@@ -53,15 +53,15 @@
         </tbody>
     </table>
 
-    @else
+    @else --}}
     <div class="">
        
-                <font color="#fae806" size="5px">
-                  {{ $message}}
-                </font>
+              {{--   <font color="#fae806" size="5px">
+                  {{ $message }}
+                </font> --}}
         
     </div>
-    @endif
+    {{-- @endif --}}
 
    
           

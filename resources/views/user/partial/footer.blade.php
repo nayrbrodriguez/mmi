@@ -17,7 +17,7 @@
             <li><a href="{{url('arabic_department')}}">Arabic Department</a>|</li>
             <li><a href="{{url('contact_us')}}">Contact Us</a>|</li>
               <ul class="social-icons">
-                                    <li><a href="" target="_blank"><img src="{{asset('/user/img/icon-2.png')}}" alt=""></a></li>
+                                    <li><a href="https://www.facebook.com/MMI.Tatayawan.tamparan.LDS/" target="_blank"><img src="{{asset('/user/img/icon-2.png')}}" alt=""></a></li>
                                     <li><a href="https://twitter.com/MMI_TATAYAWAN" target="_blank"><img src="{{ asset('/user/img/icon-1.png')}}" alt=""></a></li>
 
                                     

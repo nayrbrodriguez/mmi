@@ -69,7 +69,7 @@ class WebController extends Controller
         $data = DB::table('tb_scholarship')->get();
         return view('user.pages.scholarship.read_about', compact('content','data'));
     }
-
+ 
     public function administrative(){
     	$data = DB::table('tb_administrative')->get();
     	return view('user.pages.administrative.administrative', compact('data'));
@@ -77,8 +77,8 @@ class WebController extends Controller
 
 
     public function alumni(){
-    	$data = DB::table('tb_alumni')->paginate(10);
-    	return view('user.pages.alumni.alumni', compact('data'));
+    	// $data = DB::table('tb_alumni')->paginate(10);
+    	return view('user.pages.alumni.alumni_search');
     }
 
     public function arabic_department(){

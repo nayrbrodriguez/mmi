@@ -50,7 +50,9 @@ Route::get('/alumni', 'WebController@alumni');
 // Alumni Search Page
 Route::any('/search_alumni',function(){
     $q = Input::get ( 'q' );
+    // $noResult = Input::get ( 'q' )->isEmpty();
     $data = DB::table('tb_alumni')->where('name','LIKE','%'.$q.'%')->orWhere('id','LIKE','%'.$q.'%')->get();
+    // $null = DB::table('tb_alumni')->whereNull($q)->get();
     if($q != "")
     return view('user.pages.alumni.alumni')->withDetails($data)->withQuery ( $q );
 	
@@ -59,8 +61,8 @@ Route::any('/search_alumni',function(){
 	
 	// if($q == "")
 	// return view('user.pages.alumni.alumni')->withMessage('No Details found. Try to search again !');
-
-    else return view ('user.pages.alumni.alumni')->withMessage('No Details found. Try to search again !');
+	// if(!$q->isEmpty())
+ //    return view('user.pages.alumni.alumni')->withMessage ('asdasd' );
 	});
 
 Route::get('/dashboard', 'TestController@index');

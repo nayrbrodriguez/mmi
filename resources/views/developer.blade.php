@@ -29,7 +29,7 @@
               
                 <font color="#fae806" size="6px">Bryan Eslabra Rodriguez</font>
                 <br>
-                <font color="white" size="4px">--Background Here--</font>
+                <font color="white" size="4px">I am a Website Developer and a Freelancer. This website is one of my freelance project. I graduated at Technological Institute of the Philippines with the Bachelor Science in Information Technology. </font>
                 <br>
         {{-- <a href="#" class="btn btn_">more info</a> --}}
                 </div>
