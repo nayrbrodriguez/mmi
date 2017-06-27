@@ -28,10 +28,10 @@
       </form> 
           <div class="about_container" >
 
-    
+     
 
     @if(isset($details))
-        <p> The Search results for your query <b> {{ $query }} </b> are :</p>
+        <p style="font-size:.15in;"> The Search results for your query <font color="fae806">"<b> {{ $query }} </b>"</font> are : {{count($details)}}</p>
     <table class="table table-bordered table-hover">
         <thead>
             <tr>
@@ -44,15 +44,16 @@
         <tbody>
             @foreach($details as $data)
             <tr>
-                <td><font size="3px">{{$data->name or "No Details"}}</font></td>
-                <td><font size="3px">{{$data->id}}</font></td>
-                <td><font size="3px">{{$data->id}}</font></td>
-                <td><font size="3px">{{$data->year_grad}}</font></td>
+                <td><font size="3px">{!!$data->name or "No Details"!!}</font></td>
+                <td><font size="3px">{!!$data->id or "No Details"!!}</font></td>
+                <td><font size="3px">{!!$data->id or "No Details"!!}</font></td>
+                <td><font size="3px">{!!$data->year_grad or "No Details"!!}</font></td>
             </tr>
             @endforeach
         </tbody>
     </table>
 
+   
     @else
     <div class="">
        

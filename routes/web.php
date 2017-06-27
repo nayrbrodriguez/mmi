@@ -53,7 +53,7 @@ Route::any('/search_alumni',function(){
     // $noResult = Input::get ( 'q' )->isEmpty();
     $data = DB::table('tb_alumni')->where('name','LIKE','%'.$q.'%')->orWhere('id','LIKE','%'.$q.'%')->get();
     // $null = DB::table('tb_alumni')->whereNull($q)->get();
-    if($q != "")
+    // if($q != "")
     return view('user.pages.alumni.alumni')->withDetails($data)->withQuery ( $q );
 	
 	if($q == "")

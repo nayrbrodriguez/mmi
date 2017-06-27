@@ -18,7 +18,7 @@
       <form action="{{ url('/search_alumni') }}" method="POST" role="search" >
         {{ csrf_field() }}
         <div class="input-group">
-            <input type="text" class="form-control span8" name="q"
+            <input type="text" class="form-control span4" name="q"
                 placeholder="Enter Alumni ID or Name" id="test"> 
                 <button type="submit" class="btn btn-info">
                    Search
@@ -27,7 +27,7 @@
         </div>
       </form> 
           <div class="about_container" >
-
+ 
     
 
    {{--  @if(isset($details))
