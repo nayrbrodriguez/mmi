@@ -58,5 +58,7 @@
             </div>
          </div>   
     </div>
-    @yield('slider')
+  
+      @yield('slider')
+   
 </header>

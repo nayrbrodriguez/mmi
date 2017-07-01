@@ -26,10 +26,12 @@
 }
 .camera_wrap img {
 	max-width: none !important;
+	/*text-align: center;*/
+	/*min-width: none;*/
 }
 .camera_fakehover {
 	height: 100%;
-	min-height: 40px;
+	min-height: 50px;
 	position: relative;
 	width: 100%;
 	z-index: 1;

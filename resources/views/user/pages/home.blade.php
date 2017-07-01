@@ -4,9 +4,68 @@
 MMI Homepage
 @endsection
 
+
+
+@section('style')
+ <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="{{asset('../nivo-slider/themes/default/default.css')}}" type="text/css" media="screen" />
+<link rel="stylesheet" href="{{asset('../nivo-slider/themes/light/light.css')}}" type="text/css" media="screen" />
+<link rel="stylesheet" href="{{asset('../nivo-slider/themes/dark/dark.css')}}" type="text/css" media="screen" />
+<link rel="stylesheet" href="{{asset('../nivo-slider/themes/bar/bar.css')}}" type="text/css" media="screen" />
+<link rel="stylesheet" href="{{asset('../nivo-slider/nivo-slider.css')}}" type="text/css" media="screen" />
+<link rel="stylesheet" href="{{asset('../nivo-slider/demo/style.css')}}" type="text/css" media="screen" />
+@endsection
+
+@section('slider')
+
+
+
+<div class=" theme-default">
+<div id="slider" class="nivoSlider"> 
+ @foreach($data as $key => $gen)
+  <img src="{{ url('/uploads/banners', $gen->banner)}}" data-thumb="{{ url('/uploads/banners', $gen->banner)}}" title="{!! $gen->title !!}" alt="" />
+  {{-- <img src="../demo/images/up.jpg" data-thumb="demo/images/up.jpg" alt="" title="This is an example of a caption" /></a> 
+  <img src="../demo/images/walle.jpg" data-thumb="demo/images/walle.jpg" alt="" data-transition="slideInLeft" /> 
+  <img src="../demo/images/nemo.jpg" data-thumb="demo/images/nemo.jpg" alt="" title="#htmlcaption" />  --}}
+ @endforeach
+</div>
+{{-- <div id="htmlcaption" class="nivo-html-caption"> <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>. </div> --}}
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> 
+<script type="text/javascript" src="{{ asset('../nivo-slider/jquery.nivo.slider.js')}}"></script> 
+<script type="text/javascript">
+    $(window).load(function() {
+        $('#slider').nivoSlider();
+    });
+    </script> 
+
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
+
+@endsection
+
 @section('')
- <div class="slider">
-    <div class="camera_wrap">
+ 
+    <div class="camera_wrap" >
     {{-- @foreach ($banner as $key => $image) --}}
     @foreach($data as $key => $gen)
 
@@ -14,11 +73,13 @@ MMI Homepage
     @endforeach
         
     </div>
-</div>
+
 @endsection
 
-@section('slider')
+@section('')
  <div class="camera_wrap">
+    <div data-src="{{ url('/uploads/banners', $gen->banner)}}"></div>
+    <div data-src="{{ url('/uploads/banners', $gen->banner)}}"></div>
     <div data-src="{{ url('/uploads/banners', $gen->banner)}}"></div>
     <div data-src="{{ url('/uploads/banners', $gen->banner)}}"></div>
    
@@ -113,12 +174,15 @@ MMI Homepage
         <div class="span4">
         	
             <h4 class="indent-1">Facebook</h4>
-            <div id="search-results"></div>
-            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FMMI.Tatayawan.tamparan.LDS%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-
-			       <h4 class="indent-1">Twitter</h4>
-             <a class="twitter-timeline" data-height="500" data-width="340" href="https://twitter.com/MMI_TATAYAWAN">Tweets by MMI_TATAYAWAN</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          <div class="fb-page" data-href="https://www.facebook.com/MMI.Tatayawan.tamparan.LDS/" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/MMI.Tatayawan.tamparan.LDS/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/MMI.Tatayawan.tamparan.LDS/">Ma&#039;had Maranao Al-Islamie</a></blockquote></div>
         </div>
+        <div class="span4">
+             <h4 class="indent-1">Twitter</h4>
+             <a class="twitter-timeline" data-height="500" data-width="330" href="https://twitter.com/MMI_TATAYAWAN">Tweets by MMI_TATAYAWAN</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+       
+
+
     </div> 
 
         

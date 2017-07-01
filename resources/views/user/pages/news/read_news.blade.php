@@ -42,8 +42,9 @@
 
       <div class="span4">
         <h4 class="indent-1">Facebook</h4>
-            <div id="search-results"></div>
-            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FMMI.Tatayawan.tamparan.LDS%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+            <div class="fb-page" data-href="https://www.facebook.com/MMI.Tatayawan.tamparan.LDS/" data-tabs="timeline" data-width="340" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/MMI.Tatayawan.tamparan.LDS/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/MMI.Tatayawan.tamparan.LDS/">Ma&#039;had Maranao Al-Islamie</a></blockquote></div>
+
+            
         <h4 class="indent-1">Twitter</h4>
              <a class="twitter-timeline" data-height="500" data-width="340" href="https://twitter.com/MMI_TATAYAWAN">Tweets by MMI_TATAYAWAN</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>   
