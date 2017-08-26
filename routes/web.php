@@ -6,7 +6,7 @@ Route::get('error', function(){
 	abort(404);
 });
 
-Auth::routes();
+ 
 
 //Users page - Homepage
 Route::get('/', 'WebController@home');
@@ -40,6 +40,10 @@ Route::get('/arabic_department/{id}', 'WebController@arabic_department_view');
 // User Page - Contact Us
 Route::get('/contact_us', 'WebController@contact_us');
 
+// User Page - Registration
+Route::get('/registration', 'WebController@registration');
+
+
 // Blank Page
 Route::get('/blank', 'WebController@blank');
 
@@ -62,12 +66,14 @@ Route::any('/search_alumni',function(){
 	// if($q == "")
 	// return view('user.pages.alumni.alumni')->withMessage('No Details found. Try to search again !');
 	// if(!$q->isEmpty())
- //    return view('user.pages.alumni.alumni')->withMessage ('asdasd' );
+ 	// return view('user.pages.alumni.alumni')->withMessage ('asdasd' );
 	});
 
 Route::get('/dashboard', 'TestController@index');
 Route::get('/developer', 'DevController@index');
  
+Auth::routes();
+
 Route::group([
 	'middleware' => 'auth',
 	'prefix' => 'admin'

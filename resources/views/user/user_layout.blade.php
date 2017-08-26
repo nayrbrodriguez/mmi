@@ -18,20 +18,9 @@
 
     @yield('style')
    
-  {{--End New Camera Set up--}}
-
-
-  {{-- <link rel="stylesheet" href="{{ asset("../user/css/camera.css")}}" type="text/css" media="screen">  --}}
-  {{-- <script type="text/javascript" src="{{ asset("../user/js/camera.js")}}"></script> Last Camera Setup --}}
+  
     <script src="{{ asset("../user/js/jquery.ui.totop.js")}}" type="text/javascript"></script>
 	
-
- {{--  Last Camera
-  <script>
-      $(document).ready(function(){   
-              jQuery('.camera_wrap').camera();
-        });    
-	</script>		 --}}
 
 
 	<!--[if lt IE 8]>
@@ -62,15 +51,8 @@
   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-{{-- <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script> --}}
-<!-- fb link end-->
+
+
 
 <!--==============================header=================================-->
 

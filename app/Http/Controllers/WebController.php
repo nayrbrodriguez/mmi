@@ -105,5 +105,12 @@ class WebController extends Controller
         // return view('user.pages.contact', compact('data'));
         return view('user.pages.blank');
     }
+
+    public function registration(){ 
+        // $data = DB::table('tb_contact')->paginate(10);
+        // return view('user.pages.contact', compact('data'));
+        return view('user.pages.registration.registration');
+        // return view('user.pages.registration.register');
+    }
 }
 

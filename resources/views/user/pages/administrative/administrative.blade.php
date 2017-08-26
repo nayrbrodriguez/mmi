@@ -14,20 +14,23 @@
           <div class="about_header">
           Administrative List
           </div>
+          <div style="margin-top: 50px;">
           <ul class="list-services">
           @foreach($data as $datas=>$data)
             <li>
               <img src="uploads/image/{{ $data->image }}" width="150px" height="150px" alt="">
                 <div style="padding-left:30px;">
-                  <p class="text-info">{{$data->name}}</p>
-                  <p class="text-info">{{$data->position}}</p>
-                  <p class="text-info">{{$data->number}}</p>
-                  <p class="text-info">{{$data->email}}</p>
+                  <p class="text-info-name"> {{$data->name}}</p>
+                  <p class="text-info">Position: {{$data->position}}</p>
+                  <p class="text-info">Department: {{$data->position}}</p>
+                  <p class="text-info">Number: {{$data->number}}</p>
+                  <p class="text-info">Email: {{$data->email}}</p>
                   
                 </div>
             </li>
           @endforeach
           </ul>
+        </div>
       </div>
     </div> 
               
